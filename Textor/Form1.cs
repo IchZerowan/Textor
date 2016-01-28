@@ -21,5 +21,22 @@ namespace Textor
         {
             Close();
         }
+
+        private void tsmiUndo_Click(object sender, EventArgs e)
+        {
+            rtbMain.Undo();
+        }
+
+        private void rtbMain_KeyUp(object sender, KeyEventArgs e)
+        {
+            RichTextBox rtb = (RichTextBox)sender;
+            if (e.KeyCode == Keys.Space || e.KeyCode == Keys.Tab || e.KeyCode == Keys.Enter)
+            {
+                this.SuspendLayout();
+                rtb.Undo();
+                rtb.Redo();
+                this.ResumeLayout();
+            }
+        }
     }
 }

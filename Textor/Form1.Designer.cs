@@ -61,6 +61,7 @@
             this.rtbMain.Size = new System.Drawing.Size(618, 336);
             this.rtbMain.TabIndex = 0;
             this.rtbMain.Text = "";
+            this.rtbMain.KeyUp += new System.Windows.Forms.KeyEventHandler(this.rtbMain_KeyUp);
             // 
             // menuStrip1
             // 
@@ -151,6 +152,7 @@
             this.tsmiUndo.Name = "tsmiUndo";
             this.tsmiUndo.Size = new System.Drawing.Size(152, 22);
             this.tsmiUndo.Text = "Отменить";
+            this.tsmiUndo.Click += new System.EventHandler(this.tsmiUndo_Click);
             // 
             // tsmiCut
             // 
