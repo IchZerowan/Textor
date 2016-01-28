@@ -172,5 +172,26 @@ namespace Textor
             }
             PrintBrush.Dispose();
         }
+
+        private void tsmiDate_Click(object sender, EventArgs e)
+        {
+            Calendar.Visible = true;
+        }
+
+        private void Calendar_DateSelected(object sender, DateRangeEventArgs e)
+        {
+            rtbMain.AppendText(Calendar.SelectionStart.Date.ToShortDateString());
+            Calendar.Visible = false;
+        }
+
+        private void tsmiCalendarClose_Click(object sender, EventArgs e)
+        {
+            Calendar.Visible = false;
+        }
+
+        private void tsmiDateToday_Click(object sender, EventArgs e)
+        {
+            Calendar.SetDate(DateTime.Now);
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.rtbMain = new System.Windows.Forms.RichTextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -55,7 +56,14 @@
             this.dlgSave = new System.Windows.Forms.SaveFileDialog();
             this.dlgOpen = new System.Windows.Forms.OpenFileDialog();
             this.tsmiSelectAll = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiInsert = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiDate = new System.Windows.Forms.ToolStripMenuItem();
+            this.Calendar = new System.Windows.Forms.MonthCalendar();
+            this.cmsCalendar = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiCalendarClose = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiDateToday = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
+            this.cmsCalendar.SuspendLayout();
             this.SuspendLayout();
             // 
             // rtbMain
@@ -75,6 +83,7 @@
             this.tsmiFile,
             this.tsmiEdit,
             this.tsmiView,
+            this.tsmiInsert,
             this.tsmiHelp});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -234,7 +243,7 @@
             // tsmiBackground
             // 
             this.tsmiBackground.Name = "tsmiBackground";
-            this.tsmiBackground.Size = new System.Drawing.Size(97, 22);
+            this.tsmiBackground.Size = new System.Drawing.Size(152, 22);
             this.tsmiBackground.Text = "Фон";
             this.tsmiBackground.Click += new System.EventHandler(this.tsmiBackground_Click);
             // 
@@ -268,11 +277,61 @@
             this.tsmiSelectAll.Text = "Выделить все";
             this.tsmiSelectAll.Click += new System.EventHandler(this.выделитьВсеToolStripMenuItem_Click);
             // 
+            // tsmiInsert
+            // 
+            this.tsmiInsert.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiDate});
+            this.tsmiInsert.Name = "tsmiInsert";
+            this.tsmiInsert.Size = new System.Drawing.Size(61, 20);
+            this.tsmiInsert.Text = "Вставка";
+            // 
+            // tsmiDate
+            // 
+            this.tsmiDate.Name = "tsmiDate";
+            this.tsmiDate.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
+            this.tsmiDate.Size = new System.Drawing.Size(152, 22);
+            this.tsmiDate.Text = "Дата";
+            this.tsmiDate.Click += new System.EventHandler(this.tsmiDate_Click);
+            // 
+            // Calendar
+            // 
+            this.Calendar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Calendar.ContextMenuStrip = this.cmsCalendar;
+            this.Calendar.Location = new System.Drawing.Point(432, 24);
+            this.Calendar.Name = "Calendar";
+            this.Calendar.ShowWeekNumbers = true;
+            this.Calendar.TabIndex = 2;
+            this.Calendar.Visible = false;
+            this.Calendar.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.Calendar_DateSelected);
+            // 
+            // cmsCalendar
+            // 
+            this.cmsCalendar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiCalendarClose,
+            this.tsmiDateToday});
+            this.cmsCalendar.Name = "cmsCalendar";
+            this.cmsCalendar.Size = new System.Drawing.Size(185, 48);
+            // 
+            // tsmiCalendarClose
+            // 
+            this.tsmiCalendarClose.Name = "tsmiCalendarClose";
+            this.tsmiCalendarClose.Size = new System.Drawing.Size(184, 22);
+            this.tsmiCalendarClose.Text = "Закрыть";
+            this.tsmiCalendarClose.Click += new System.EventHandler(this.tsmiCalendarClose_Click);
+            // 
+            // tsmiDateToday
+            // 
+            this.tsmiDateToday.Name = "tsmiDateToday";
+            this.tsmiDateToday.Size = new System.Drawing.Size(184, 22);
+            this.tsmiDateToday.Text = "К сегодняшней дате";
+            this.tsmiDateToday.Click += new System.EventHandler(this.tsmiDateToday_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(618, 360);
+            this.Controls.Add(this.Calendar);
             this.Controls.Add(this.rtbMain);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -281,6 +340,7 @@
             this.Text = "Textor";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.cmsCalendar.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -314,6 +374,12 @@
         private System.Windows.Forms.SaveFileDialog dlgSave;
         private System.Windows.Forms.OpenFileDialog dlgOpen;
         private System.Windows.Forms.ToolStripMenuItem tsmiSelectAll;
+        private System.Windows.Forms.ToolStripMenuItem tsmiInsert;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDate;
+        private System.Windows.Forms.MonthCalendar Calendar;
+        private System.Windows.Forms.ContextMenuStrip cmsCalendar;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCalendarClose;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDateToday;
     }
 }
 
