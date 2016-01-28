@@ -86,6 +86,7 @@ namespace Textor
         private void dlgSave_FileOk(object sender, CancelEventArgs e)
         {
             rtbMain.SaveFile(dlgSave.FileName);
+            rtbMain.Modified = false;
         }
 
         private void tsmiSaveAs_Click(object sender, EventArgs e)
@@ -102,6 +103,7 @@ namespace Textor
         {
             rtbMain.LoadFile(dlgOpen.FileName);
             dlgSave.FileName = dlgOpen.FileName;
+            rtbMain.Modified = false;
         }
 
         private void выделитьВсеToolStripMenuItem_Click(object sender, EventArgs e)
