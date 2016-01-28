@@ -140,6 +140,7 @@
             this.tsmiPrint.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
             this.tsmiPrint.Size = new System.Drawing.Size(216, 22);
             this.tsmiPrint.Text = "Печать";
+            this.tsmiPrint.Click += new System.EventHandler(this.tsmiPrint_Click);
             // 
             // tsmiExit
             // 
