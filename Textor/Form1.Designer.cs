@@ -35,15 +35,15 @@
             this.tsmiOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSave = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSaveAs = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiPrint = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiUndo = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiCut = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCopy = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiPaste = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiClear = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,6 +55,7 @@
             // 
             // rtbMain
             // 
+            this.rtbMain.AcceptsTab = true;
             this.rtbMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rtbMain.Location = new System.Drawing.Point(0, 24);
             this.rtbMain.Name = "rtbMain";
@@ -114,6 +115,11 @@
             this.tsmiSaveAs.Size = new System.Drawing.Size(153, 22);
             this.tsmiSaveAs.Text = "Сохранить как";
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(150, 6);
+            // 
             // tsmiPrint
             // 
             this.tsmiPrint.Name = "tsmiPrint";
@@ -126,11 +132,6 @@
             this.tsmiExit.Size = new System.Drawing.Size(153, 22);
             this.tsmiExit.Text = "Выход";
             this.tsmiExit.Click += new System.EventHandler(this.tsmiExit_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(150, 6);
             // 
             // tsmiEdit
             // 
@@ -150,9 +151,15 @@
             // tsmiUndo
             // 
             this.tsmiUndo.Name = "tsmiUndo";
-            this.tsmiUndo.Size = new System.Drawing.Size(152, 22);
+            this.tsmiUndo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
+            this.tsmiUndo.Size = new System.Drawing.Size(169, 22);
             this.tsmiUndo.Text = "Отменить";
             this.tsmiUndo.Click += new System.EventHandler(this.tsmiUndo_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(149, 6);
             // 
             // tsmiCut
             // 
@@ -171,11 +178,6 @@
             this.tsmiPaste.Name = "tsmiPaste";
             this.tsmiPaste.Size = new System.Drawing.Size(152, 22);
             this.tsmiPaste.Text = "Вставить";
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(149, 6);
             // 
             // tsmiDelete
             // 
@@ -205,7 +207,7 @@
             // tsmiBackground
             // 
             this.tsmiBackground.Name = "tsmiBackground";
-            this.tsmiBackground.Size = new System.Drawing.Size(152, 22);
+            this.tsmiBackground.Size = new System.Drawing.Size(97, 22);
             this.tsmiBackground.Text = "Фон";
             // 
             // tsmiHelp
