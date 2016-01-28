@@ -1,6 +1,6 @@
 ﻿namespace Textor
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.rtbMain = new System.Windows.Forms.RichTextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tsmiFile = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,6 +41,7 @@
             this.tsmiExit = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiUndo = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiRedo = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiCut = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCopy = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,7 +51,6 @@
             this.tsmiView = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiBackground = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiHelp = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiRedo = new System.Windows.Forms.ToolStripMenuItem();
             this.dlgColor = new System.Windows.Forms.ColorDialog();
             this.dlgSave = new System.Windows.Forms.SaveFileDialog();
             this.dlgOpen = new System.Windows.Forms.OpenFileDialog();
@@ -162,6 +163,14 @@
             this.tsmiUndo.Text = "Отменить";
             this.tsmiUndo.Click += new System.EventHandler(this.tsmiUndo_Click);
             // 
+            // tsmiRedo
+            // 
+            this.tsmiRedo.Name = "tsmiRedo";
+            this.tsmiRedo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
+            this.tsmiRedo.Size = new System.Drawing.Size(181, 22);
+            this.tsmiRedo.Text = "Вернуть";
+            this.tsmiRedo.Click += new System.EventHandler(this.tsmiRedo_Click);
+            // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
@@ -214,7 +223,7 @@
             // tsmiBackground
             // 
             this.tsmiBackground.Name = "tsmiBackground";
-            this.tsmiBackground.Size = new System.Drawing.Size(152, 22);
+            this.tsmiBackground.Size = new System.Drawing.Size(97, 22);
             this.tsmiBackground.Text = "Фон";
             this.tsmiBackground.Click += new System.EventHandler(this.tsmiBackground_Click);
             // 
@@ -223,14 +232,6 @@
             this.tsmiHelp.Name = "tsmiHelp";
             this.tsmiHelp.Size = new System.Drawing.Size(65, 20);
             this.tsmiHelp.Text = "Справка";
-            // 
-            // tsmiRedo
-            // 
-            this.tsmiRedo.Name = "tsmiRedo";
-            this.tsmiRedo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
-            this.tsmiRedo.Size = new System.Drawing.Size(181, 22);
-            this.tsmiRedo.Text = "Вернуть";
-            this.tsmiRedo.Click += new System.EventHandler(this.tsmiRedo_Click);
             // 
             // dlgColor
             // 
@@ -248,16 +249,17 @@
             // 
             this.dlgOpen.FileOk += new System.ComponentModel.CancelEventHandler(this.dlgOpen_FileOk);
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(618, 360);
             this.Controls.Add(this.rtbMain);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "MainForm";
+            this.Text = "Textor";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
