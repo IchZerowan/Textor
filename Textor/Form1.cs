@@ -43,5 +43,20 @@ namespace Textor
         {
             rtbMain.Redo();
         }
+
+        private void tsmiCut_Click(object sender, EventArgs e)
+        {
+            rtbMain.Cut();
+        }
+
+        private void tsmiCopy_Click(object sender, EventArgs e)
+        {
+            rtbMain.Copy();
+        }
+
+        private void tsmiPaste_Click(object sender, EventArgs e)
+        {
+            rtbMain.Paste();
+        }
     }
 }

@@ -166,20 +166,26 @@
             // tsmiCut
             // 
             this.tsmiCut.Name = "tsmiCut";
+            this.tsmiCut.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
             this.tsmiCut.Size = new System.Drawing.Size(169, 22);
             this.tsmiCut.Text = "Вырезать";
+            this.tsmiCut.Click += new System.EventHandler(this.tsmiCut_Click);
             // 
             // tsmiCopy
             // 
             this.tsmiCopy.Name = "tsmiCopy";
-            this.tsmiCopy.Size = new System.Drawing.Size(169, 22);
+            this.tsmiCopy.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.tsmiCopy.Size = new System.Drawing.Size(181, 22);
             this.tsmiCopy.Text = "Копировать";
+            this.tsmiCopy.Click += new System.EventHandler(this.tsmiCopy_Click);
             // 
             // tsmiPaste
             // 
             this.tsmiPaste.Name = "tsmiPaste";
-            this.tsmiPaste.Size = new System.Drawing.Size(169, 22);
+            this.tsmiPaste.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
+            this.tsmiPaste.Size = new System.Drawing.Size(181, 22);
             this.tsmiPaste.Text = "Вставить";
+            this.tsmiPaste.Click += new System.EventHandler(this.tsmiPaste_Click);
             // 
             // tsmiDelete
             // 
