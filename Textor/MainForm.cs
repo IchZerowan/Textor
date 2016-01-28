@@ -17,6 +17,14 @@ namespace Textor
             InitializeComponent();
         }
 
+        private void Save()
+        {
+            if (dlgSave.FileName == "")
+                dlgSave.ShowDialog();
+            else
+                rtbMain.SaveFile(dlgSave.FileName);
+        }
+
         private void tsmiExit_Click(object sender, EventArgs e)
         {
             Close();
@@ -72,10 +80,7 @@ namespace Textor
 
         private void tsmiSave_Click(object sender, EventArgs e)
         {
-            if (dlgSave.FileName == "")
-                dlgSave.ShowDialog();
-            else
-                rtbMain.SaveFile(dlgSave.FileName);
+            Save();
         }
 
         private void dlgSave_FileOk(object sender, CancelEventArgs e)
@@ -102,6 +107,22 @@ namespace Textor
         private void выделитьВсеToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rtbMain.SelectAll();
+        }
+
+        private void tsmiNew_Click(object sender, EventArgs e)
+        {
+            if (rtbMain.Modified)
+            {
+                var res = MessageBox.Show("Сохранить изменения в файле?", "Внимание!", MessageBoxButtons.YesNoCancel);
+                if (res == DialogResult.Cancel)
+                    return;
+                else if (res == DialogResult.Yes)
+                    Save();
+            }
+            dlgSave.FileName = "";
+            dlgOpen.FileName = "";
+            rtbMain.Clear();
+            rtbMain.Modified = false;
         }
     }
 }

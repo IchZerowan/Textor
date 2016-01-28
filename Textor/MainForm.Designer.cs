@@ -99,8 +99,10 @@
             // tsmiNew
             // 
             this.tsmiNew.Name = "tsmiNew";
+            this.tsmiNew.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
             this.tsmiNew.Size = new System.Drawing.Size(216, 22);
             this.tsmiNew.Text = "Новый";
+            this.tsmiNew.Click += new System.EventHandler(this.tsmiNew_Click);
             // 
             // tsmiOpen
             // 
