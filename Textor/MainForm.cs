@@ -98,5 +98,10 @@ namespace Textor
             rtbMain.LoadFile(dlgOpen.FileName);
             dlgSave.FileName = dlgOpen.FileName;
         }
+
+        private void выделитьВсеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rtbMain.SelectAll();
+        }
     }
 }

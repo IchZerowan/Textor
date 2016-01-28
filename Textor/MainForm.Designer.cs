@@ -54,6 +54,7 @@
             this.dlgColor = new System.Windows.Forms.ColorDialog();
             this.dlgSave = new System.Windows.Forms.SaveFileDialog();
             this.dlgOpen = new System.Windows.Forms.OpenFileDialog();
+            this.tsmiSelectAll = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -156,6 +157,7 @@
             this.tsmiCopy,
             this.tsmiPaste,
             this.toolStripMenuItem3,
+            this.tsmiSelectAll,
             this.tsmiClear});
             this.tsmiEdit.Name = "tsmiEdit";
             this.tsmiEdit.Size = new System.Drawing.Size(59, 20);
@@ -165,7 +167,7 @@
             // 
             this.tsmiUndo.Name = "tsmiUndo";
             this.tsmiUndo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.tsmiUndo.Size = new System.Drawing.Size(181, 22);
+            this.tsmiUndo.Size = new System.Drawing.Size(190, 22);
             this.tsmiUndo.Text = "Отменить";
             this.tsmiUndo.Click += new System.EventHandler(this.tsmiUndo_Click);
             // 
@@ -173,20 +175,20 @@
             // 
             this.tsmiRedo.Name = "tsmiRedo";
             this.tsmiRedo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
-            this.tsmiRedo.Size = new System.Drawing.Size(181, 22);
+            this.tsmiRedo.Size = new System.Drawing.Size(190, 22);
             this.tsmiRedo.Text = "Вернуть";
             this.tsmiRedo.Click += new System.EventHandler(this.tsmiRedo_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(178, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(187, 6);
             // 
             // tsmiCut
             // 
             this.tsmiCut.Name = "tsmiCut";
             this.tsmiCut.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.tsmiCut.Size = new System.Drawing.Size(181, 22);
+            this.tsmiCut.Size = new System.Drawing.Size(190, 22);
             this.tsmiCut.Text = "Вырезать";
             this.tsmiCut.Click += new System.EventHandler(this.tsmiCut_Click);
             // 
@@ -194,7 +196,7 @@
             // 
             this.tsmiCopy.Name = "tsmiCopy";
             this.tsmiCopy.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.tsmiCopy.Size = new System.Drawing.Size(181, 22);
+            this.tsmiCopy.Size = new System.Drawing.Size(190, 22);
             this.tsmiCopy.Text = "Копировать";
             this.tsmiCopy.Click += new System.EventHandler(this.tsmiCopy_Click);
             // 
@@ -202,19 +204,19 @@
             // 
             this.tsmiPaste.Name = "tsmiPaste";
             this.tsmiPaste.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.tsmiPaste.Size = new System.Drawing.Size(181, 22);
+            this.tsmiPaste.Size = new System.Drawing.Size(190, 22);
             this.tsmiPaste.Text = "Вставить";
             this.tsmiPaste.Click += new System.EventHandler(this.tsmiPaste_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(178, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(187, 6);
             // 
             // tsmiClear
             // 
             this.tsmiClear.Name = "tsmiClear";
-            this.tsmiClear.Size = new System.Drawing.Size(181, 22);
+            this.tsmiClear.Size = new System.Drawing.Size(190, 22);
             this.tsmiClear.Text = "Очистить";
             this.tsmiClear.Click += new System.EventHandler(this.tsmiClear_Click);
             // 
@@ -254,6 +256,14 @@
             // dlgOpen
             // 
             this.dlgOpen.FileOk += new System.ComponentModel.CancelEventHandler(this.dlgOpen_FileOk);
+            // 
+            // tsmiSelectAll
+            // 
+            this.tsmiSelectAll.Name = "tsmiSelectAll";
+            this.tsmiSelectAll.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
+            this.tsmiSelectAll.Size = new System.Drawing.Size(190, 22);
+            this.tsmiSelectAll.Text = "Выделить все";
+            this.tsmiSelectAll.Click += new System.EventHandler(this.выделитьВсеToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -300,6 +310,7 @@
         private System.Windows.Forms.ColorDialog dlgColor;
         private System.Windows.Forms.SaveFileDialog dlgSave;
         private System.Windows.Forms.OpenFileDialog dlgOpen;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSelectAll;
     }
 }
 
