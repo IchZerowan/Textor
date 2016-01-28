@@ -58,5 +58,10 @@ namespace Textor
         {
             rtbMain.Paste();
         }
+
+        private void tsmiClear_Click(object sender, EventArgs e)
+        {
+            rtbMain.Clear();
+        }
     }
 }

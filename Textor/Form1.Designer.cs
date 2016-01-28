@@ -193,8 +193,9 @@
             // tsmiClear
             // 
             this.tsmiClear.Name = "tsmiClear";
-            this.tsmiClear.Size = new System.Drawing.Size(169, 22);
+            this.tsmiClear.Size = new System.Drawing.Size(181, 22);
             this.tsmiClear.Text = "Очистить";
+            this.tsmiClear.Click += new System.EventHandler(this.tsmiClear_Click);
             // 
             // tsmiView
             // 
