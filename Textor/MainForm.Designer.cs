@@ -62,6 +62,10 @@
             this.cmsCalendar = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiCalendarClose = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDateToday = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTime = new System.Windows.Forms.ToolStripMenuItem();
+            this.TsmiTimeNow = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTimeOther = new System.Windows.Forms.ToolStripMenuItem();
+            this.mtbTime = new System.Windows.Forms.MaskedTextBox();
             this.menuStrip1.SuspendLayout();
             this.cmsCalendar.SuspendLayout();
             this.SuspendLayout();
@@ -280,7 +284,8 @@
             // tsmiInsert
             // 
             this.tsmiInsert.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiDate});
+            this.tsmiDate,
+            this.tsmiTime});
             this.tsmiInsert.Name = "tsmiInsert";
             this.tsmiInsert.Size = new System.Drawing.Size(61, 20);
             this.tsmiInsert.Text = "Вставка";
@@ -326,11 +331,47 @@
             this.tsmiDateToday.Text = "К сегодняшней дате";
             this.tsmiDateToday.Click += new System.EventHandler(this.tsmiDateToday_Click);
             // 
+            // tsmiTime
+            // 
+            this.tsmiTime.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TsmiTimeNow,
+            this.tsmiTimeOther});
+            this.tsmiTime.Name = "tsmiTime";
+            this.tsmiTime.Size = new System.Drawing.Size(152, 22);
+            this.tsmiTime.Text = "Время";
+            // 
+            // TsmiTimeNow
+            // 
+            this.TsmiTimeNow.Name = "TsmiTimeNow";
+            this.TsmiTimeNow.Size = new System.Drawing.Size(152, 22);
+            this.TsmiTimeNow.Text = "Сейчас";
+            this.TsmiTimeNow.Click += new System.EventHandler(this.TsmiTimeNow_Click);
+            // 
+            // tsmiTimeOther
+            // 
+            this.tsmiTimeOther.Name = "tsmiTimeOther";
+            this.tsmiTimeOther.Size = new System.Drawing.Size(152, 22);
+            this.tsmiTimeOther.Text = "Другое";
+            this.tsmiTimeOther.Click += new System.EventHandler(this.tsmiTimeOther_Click);
+            // 
+            // mtbTime
+            // 
+            this.mtbTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.mtbTime.Location = new System.Drawing.Point(584, 24);
+            this.mtbTime.Mask = "90:00";
+            this.mtbTime.Name = "mtbTime";
+            this.mtbTime.Size = new System.Drawing.Size(34, 20);
+            this.mtbTime.TabIndex = 4;
+            this.mtbTime.ValidatingType = typeof(System.DateTime);
+            this.mtbTime.Visible = false;
+            this.mtbTime.KeyDown += new System.Windows.Forms.KeyEventHandler(this.mtbTime_KeyDown);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(618, 360);
+            this.Controls.Add(this.mtbTime);
             this.Controls.Add(this.Calendar);
             this.Controls.Add(this.rtbMain);
             this.Controls.Add(this.menuStrip1);
@@ -380,6 +421,10 @@
         private System.Windows.Forms.ContextMenuStrip cmsCalendar;
         private System.Windows.Forms.ToolStripMenuItem tsmiCalendarClose;
         private System.Windows.Forms.ToolStripMenuItem tsmiDateToday;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTime;
+        private System.Windows.Forms.ToolStripMenuItem TsmiTimeNow;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTimeOther;
+        private System.Windows.Forms.MaskedTextBox mtbTime;
     }
 }
 
