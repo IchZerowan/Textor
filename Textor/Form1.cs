@@ -16,5 +16,10 @@ namespace Textor
         {
             InitializeComponent();
         }
+
+        private void tsmiExit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
