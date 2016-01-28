@@ -38,5 +38,10 @@ namespace Textor
                 this.ResumeLayout();
             }
         }
+
+        private void tsmiRedo_Click(object sender, EventArgs e)
+        {
+            rtbMain.Redo();
+        }
     }
 }

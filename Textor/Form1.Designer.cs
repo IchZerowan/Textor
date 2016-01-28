@@ -50,6 +50,7 @@
             this.tsmiView = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiBackground = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiHelp = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiRedo = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -137,6 +138,7 @@
             // 
             this.tsmiEdit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiUndo,
+            this.tsmiRedo,
             this.toolStripMenuItem2,
             this.tsmiCut,
             this.tsmiCopy,
@@ -159,41 +161,41 @@
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(149, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(166, 6);
             // 
             // tsmiCut
             // 
             this.tsmiCut.Name = "tsmiCut";
-            this.tsmiCut.Size = new System.Drawing.Size(152, 22);
+            this.tsmiCut.Size = new System.Drawing.Size(169, 22);
             this.tsmiCut.Text = "Вырезать";
             // 
             // tsmiCopy
             // 
             this.tsmiCopy.Name = "tsmiCopy";
-            this.tsmiCopy.Size = new System.Drawing.Size(152, 22);
+            this.tsmiCopy.Size = new System.Drawing.Size(169, 22);
             this.tsmiCopy.Text = "Копировать";
             // 
             // tsmiPaste
             // 
             this.tsmiPaste.Name = "tsmiPaste";
-            this.tsmiPaste.Size = new System.Drawing.Size(152, 22);
+            this.tsmiPaste.Size = new System.Drawing.Size(169, 22);
             this.tsmiPaste.Text = "Вставить";
             // 
             // tsmiDelete
             // 
             this.tsmiDelete.Name = "tsmiDelete";
-            this.tsmiDelete.Size = new System.Drawing.Size(152, 22);
+            this.tsmiDelete.Size = new System.Drawing.Size(169, 22);
             this.tsmiDelete.Text = "Удалить";
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(149, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(166, 6);
             // 
             // tsmiClear
             // 
             this.tsmiClear.Name = "tsmiClear";
-            this.tsmiClear.Size = new System.Drawing.Size(152, 22);
+            this.tsmiClear.Size = new System.Drawing.Size(169, 22);
             this.tsmiClear.Text = "Очистить";
             // 
             // tsmiView
@@ -215,6 +217,14 @@
             this.tsmiHelp.Name = "tsmiHelp";
             this.tsmiHelp.Size = new System.Drawing.Size(65, 20);
             this.tsmiHelp.Text = "Справка";
+            // 
+            // tsmiRedo
+            // 
+            this.tsmiRedo.Name = "tsmiRedo";
+            this.tsmiRedo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
+            this.tsmiRedo.Size = new System.Drawing.Size(169, 22);
+            this.tsmiRedo.Text = "Вернуть";
+            this.tsmiRedo.Click += new System.EventHandler(this.tsmiRedo_Click);
             // 
             // Form1
             // 
@@ -257,6 +267,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiView;
         private System.Windows.Forms.ToolStripMenuItem tsmiBackground;
         private System.Windows.Forms.ToolStripMenuItem tsmiHelp;
+        private System.Windows.Forms.ToolStripMenuItem tsmiRedo;
     }
 }
 
