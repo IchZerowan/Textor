@@ -63,5 +63,11 @@ namespace Textor
         {
             rtbMain.Clear();
         }
+
+        private void tsmiBackground_Click(object sender, EventArgs e)
+        {
+            dlgColor.ShowDialog();
+            rtbMain.BackColor = dlgColor.Color;
+        }
     }
 }
