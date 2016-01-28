@@ -51,6 +51,8 @@
             this.tsmiHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiRedo = new System.Windows.Forms.ToolStripMenuItem();
             this.dlgColor = new System.Windows.Forms.ColorDialog();
+            this.dlgSave = new System.Windows.Forms.SaveFileDialog();
+            this.dlgOpen = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,18 +105,21 @@
             this.tsmiOpen.Name = "tsmiOpen";
             this.tsmiOpen.Size = new System.Drawing.Size(153, 22);
             this.tsmiOpen.Text = "Открыть";
+            this.tsmiOpen.Click += new System.EventHandler(this.tsmiOpen_Click);
             // 
             // tsmiSave
             // 
             this.tsmiSave.Name = "tsmiSave";
             this.tsmiSave.Size = new System.Drawing.Size(153, 22);
             this.tsmiSave.Text = "Сохранить";
+            this.tsmiSave.Click += new System.EventHandler(this.tsmiSave_Click);
             // 
             // tsmiSaveAs
             // 
             this.tsmiSaveAs.Name = "tsmiSaveAs";
             this.tsmiSaveAs.Size = new System.Drawing.Size(153, 22);
             this.tsmiSaveAs.Text = "Сохранить как";
+            this.tsmiSaveAs.Click += new System.EventHandler(this.tsmiSaveAs_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -233,6 +238,16 @@
             this.dlgColor.Color = System.Drawing.Color.White;
             this.dlgColor.FullOpen = true;
             // 
+            // dlgSave
+            // 
+            this.dlgSave.DefaultExt = "*.rtf";
+            this.dlgSave.Filter = "RichTextFiles|*.rtf";
+            this.dlgSave.FileOk += new System.ComponentModel.CancelEventHandler(this.dlgSave_FileOk);
+            // 
+            // dlgOpen
+            // 
+            this.dlgOpen.FileOk += new System.ComponentModel.CancelEventHandler(this.dlgOpen_FileOk);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -275,6 +290,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiHelp;
         private System.Windows.Forms.ToolStripMenuItem tsmiRedo;
         private System.Windows.Forms.ColorDialog dlgColor;
+        private System.Windows.Forms.SaveFileDialog dlgSave;
+        private System.Windows.Forms.OpenFileDialog dlgOpen;
     }
 }
 

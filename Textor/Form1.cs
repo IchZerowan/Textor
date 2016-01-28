@@ -69,5 +69,34 @@ namespace Textor
             dlgColor.ShowDialog();
             rtbMain.BackColor = dlgColor.Color;
         }
+
+        private void tsmiSave_Click(object sender, EventArgs e)
+        {
+            if (dlgSave.FileName == "")
+                dlgSave.ShowDialog();
+            else
+                rtbMain.SaveFile(dlgSave.FileName);
+        }
+
+        private void dlgSave_FileOk(object sender, CancelEventArgs e)
+        {
+            rtbMain.SaveFile(dlgSave.FileName);
+        }
+
+        private void tsmiSaveAs_Click(object sender, EventArgs e)
+        {
+            dlgSave.ShowDialog();
+        }
+
+        private void tsmiOpen_Click(object sender, EventArgs e)
+        {
+            dlgOpen.ShowDialog();
+        }
+
+        private void dlgOpen_FileOk(object sender, CancelEventArgs e)
+        {
+            rtbMain.LoadFile(dlgOpen.FileName);
+            dlgSave.FileName = dlgOpen.FileName;
+        }
     }
 }
