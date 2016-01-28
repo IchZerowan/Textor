@@ -48,24 +48,27 @@
             this.tsmiCopy = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiPaste = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiSelectAll = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiClear = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiView = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiBackground = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiInsert = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiDate = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTime = new System.Windows.Forms.ToolStripMenuItem();
+            this.TsmiTimeNow = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTimeOther = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.dlgColor = new System.Windows.Forms.ColorDialog();
             this.dlgSave = new System.Windows.Forms.SaveFileDialog();
             this.dlgOpen = new System.Windows.Forms.OpenFileDialog();
-            this.tsmiSelectAll = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiInsert = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiDate = new System.Windows.Forms.ToolStripMenuItem();
             this.Calendar = new System.Windows.Forms.MonthCalendar();
             this.cmsCalendar = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiCalendarClose = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDateToday = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTime = new System.Windows.Forms.ToolStripMenuItem();
-            this.TsmiTimeNow = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTimeOther = new System.Windows.Forms.ToolStripMenuItem();
             this.mtbTime = new System.Windows.Forms.MaskedTextBox();
+            this.sBHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSBHsend = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSBHinsert = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.cmsCalendar.SuspendLayout();
             this.SuspendLayout();
@@ -88,7 +91,8 @@
             this.tsmiEdit,
             this.tsmiView,
             this.tsmiInsert,
-            this.tsmiHelp});
+            this.tsmiHelp,
+            this.sBHToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(618, 24);
@@ -229,6 +233,14 @@
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             this.toolStripMenuItem3.Size = new System.Drawing.Size(187, 6);
             // 
+            // tsmiSelectAll
+            // 
+            this.tsmiSelectAll.Name = "tsmiSelectAll";
+            this.tsmiSelectAll.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
+            this.tsmiSelectAll.Size = new System.Drawing.Size(190, 22);
+            this.tsmiSelectAll.Text = "Выделить все";
+            this.tsmiSelectAll.Click += new System.EventHandler(this.выделитьВсеToolStripMenuItem_Click);
+            // 
             // tsmiClear
             // 
             this.tsmiClear.Name = "tsmiClear";
@@ -251,6 +263,46 @@
             this.tsmiBackground.Text = "Фон";
             this.tsmiBackground.Click += new System.EventHandler(this.tsmiBackground_Click);
             // 
+            // tsmiInsert
+            // 
+            this.tsmiInsert.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiDate,
+            this.tsmiTime});
+            this.tsmiInsert.Name = "tsmiInsert";
+            this.tsmiInsert.Size = new System.Drawing.Size(61, 20);
+            this.tsmiInsert.Text = "Вставка";
+            // 
+            // tsmiDate
+            // 
+            this.tsmiDate.Name = "tsmiDate";
+            this.tsmiDate.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
+            this.tsmiDate.Size = new System.Drawing.Size(152, 22);
+            this.tsmiDate.Text = "Дата";
+            this.tsmiDate.Click += new System.EventHandler(this.tsmiDate_Click);
+            // 
+            // tsmiTime
+            // 
+            this.tsmiTime.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TsmiTimeNow,
+            this.tsmiTimeOther});
+            this.tsmiTime.Name = "tsmiTime";
+            this.tsmiTime.Size = new System.Drawing.Size(152, 22);
+            this.tsmiTime.Text = "Время";
+            // 
+            // TsmiTimeNow
+            // 
+            this.TsmiTimeNow.Name = "TsmiTimeNow";
+            this.TsmiTimeNow.Size = new System.Drawing.Size(114, 22);
+            this.TsmiTimeNow.Text = "Сейчас";
+            this.TsmiTimeNow.Click += new System.EventHandler(this.TsmiTimeNow_Click);
+            // 
+            // tsmiTimeOther
+            // 
+            this.tsmiTimeOther.Name = "tsmiTimeOther";
+            this.tsmiTimeOther.Size = new System.Drawing.Size(114, 22);
+            this.tsmiTimeOther.Text = "Другое";
+            this.tsmiTimeOther.Click += new System.EventHandler(this.tsmiTimeOther_Click);
+            // 
             // tsmiHelp
             // 
             this.tsmiHelp.Name = "tsmiHelp";
@@ -272,31 +324,6 @@
             // dlgOpen
             // 
             this.dlgOpen.FileOk += new System.ComponentModel.CancelEventHandler(this.dlgOpen_FileOk);
-            // 
-            // tsmiSelectAll
-            // 
-            this.tsmiSelectAll.Name = "tsmiSelectAll";
-            this.tsmiSelectAll.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.tsmiSelectAll.Size = new System.Drawing.Size(190, 22);
-            this.tsmiSelectAll.Text = "Выделить все";
-            this.tsmiSelectAll.Click += new System.EventHandler(this.выделитьВсеToolStripMenuItem_Click);
-            // 
-            // tsmiInsert
-            // 
-            this.tsmiInsert.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiDate,
-            this.tsmiTime});
-            this.tsmiInsert.Name = "tsmiInsert";
-            this.tsmiInsert.Size = new System.Drawing.Size(61, 20);
-            this.tsmiInsert.Text = "Вставка";
-            // 
-            // tsmiDate
-            // 
-            this.tsmiDate.Name = "tsmiDate";
-            this.tsmiDate.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
-            this.tsmiDate.Size = new System.Drawing.Size(152, 22);
-            this.tsmiDate.Text = "Дата";
-            this.tsmiDate.Click += new System.EventHandler(this.tsmiDate_Click);
             // 
             // Calendar
             // 
@@ -331,29 +358,6 @@
             this.tsmiDateToday.Text = "К сегодняшней дате";
             this.tsmiDateToday.Click += new System.EventHandler(this.tsmiDateToday_Click);
             // 
-            // tsmiTime
-            // 
-            this.tsmiTime.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.TsmiTimeNow,
-            this.tsmiTimeOther});
-            this.tsmiTime.Name = "tsmiTime";
-            this.tsmiTime.Size = new System.Drawing.Size(152, 22);
-            this.tsmiTime.Text = "Время";
-            // 
-            // TsmiTimeNow
-            // 
-            this.TsmiTimeNow.Name = "TsmiTimeNow";
-            this.TsmiTimeNow.Size = new System.Drawing.Size(152, 22);
-            this.TsmiTimeNow.Text = "Сейчас";
-            this.TsmiTimeNow.Click += new System.EventHandler(this.TsmiTimeNow_Click);
-            // 
-            // tsmiTimeOther
-            // 
-            this.tsmiTimeOther.Name = "tsmiTimeOther";
-            this.tsmiTimeOther.Size = new System.Drawing.Size(152, 22);
-            this.tsmiTimeOther.Text = "Другое";
-            this.tsmiTimeOther.Click += new System.EventHandler(this.tsmiTimeOther_Click);
-            // 
             // mtbTime
             // 
             this.mtbTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -365,6 +369,31 @@
             this.mtbTime.ValidatingType = typeof(System.DateTime);
             this.mtbTime.Visible = false;
             this.mtbTime.KeyDown += new System.Windows.Forms.KeyEventHandler(this.mtbTime_KeyDown);
+            // 
+            // sBHToolStripMenuItem
+            // 
+            this.sBHToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiSBHsend,
+            this.tsmiSBHinsert});
+            this.sBHToolStripMenuItem.Name = "sBHToolStripMenuItem";
+            this.sBHToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.sBHToolStripMenuItem.Text = "SBH";
+            // 
+            // tsmiSBHsend
+            // 
+            this.tsmiSBHsend.Name = "tsmiSBHsend";
+            this.tsmiSBHsend.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Insert)));
+            this.tsmiSBHsend.Size = new System.Drawing.Size(240, 22);
+            this.tsmiSBHsend.Text = "Отослать выделенное";
+            this.tsmiSBHsend.Click += new System.EventHandler(this.tsmiSBHsend_Click);
+            // 
+            // tsmiSBHinsert
+            // 
+            this.tsmiSBHinsert.Name = "tsmiSBHinsert";
+            this.tsmiSBHinsert.ShortcutKeys = System.Windows.Forms.Keys.Insert;
+            this.tsmiSBHinsert.Size = new System.Drawing.Size(240, 22);
+            this.tsmiSBHinsert.Text = "Вставить из памяти";
+            this.tsmiSBHinsert.Click += new System.EventHandler(this.tsmiSBHinsert_Click);
             // 
             // MainForm
             // 
@@ -425,6 +454,9 @@
         private System.Windows.Forms.ToolStripMenuItem TsmiTimeNow;
         private System.Windows.Forms.ToolStripMenuItem tsmiTimeOther;
         private System.Windows.Forms.MaskedTextBox mtbTime;
+        private System.Windows.Forms.ToolStripMenuItem sBHToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSBHsend;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSBHinsert;
     }
 }
 

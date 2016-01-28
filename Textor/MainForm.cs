@@ -4,11 +4,14 @@ using System.Drawing;
 using System.Drawing.Printing;
 using System.IO;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace Textor
 {
     public partial class MainForm : Form
     {
+        const string path = "data.ini";
+
         public MainForm()
         {
             InitializeComponent();
@@ -213,6 +216,27 @@ namespace Textor
         {
             mtbTime.Visible = true;
             mtbTime.Focus();
+        }
+
+        private void tsmiSBHsend_Click(object sender, EventArgs e)
+        {
+            if (!File.Exists(path))
+                File.Create(path);
+            try
+            {
+                File.WriteAllText(path, rtbMain.SelectedText);
+            } 
+            finally
+            {
+            }
+        }
+
+        private void tsmiSBHinsert_Click(object sender, EventArgs e)
+        {
+            if (File.Exists(path))
+            {
+                rtbMain.AppendText(File.ReadAllText(path));
+            }
         }
     }
 }
