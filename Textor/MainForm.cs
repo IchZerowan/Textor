@@ -4,11 +4,14 @@ using System.Drawing;
 using System.Drawing.Printing;
 using System.IO;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace Textor
 {
     public partial class MainForm : Form
     {
+        const string path = "data.ini";
+
         public MainForm()
         {
             InitializeComponent();
