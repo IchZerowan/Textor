@@ -68,6 +68,9 @@
             this.mtbTime = new System.Windows.Forms.MaskedTextBox();
             this.tsmiFont = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiFontColor = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiBackColor = new System.Windows.Forms.ToolStripMenuItem();
+            this.dlgFont = new System.Windows.Forms.FontDialog();
+            this.tsmiTextFont = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.cmsCalendar.SuspendLayout();
             this.SuspendLayout();
@@ -75,9 +78,11 @@
             // rtbMain
             // 
             this.rtbMain.AcceptsTab = true;
+            this.rtbMain.AutoWordSelection = true;
             this.rtbMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rtbMain.Location = new System.Drawing.Point(0, 24);
             this.rtbMain.Name = "rtbMain";
+            this.rtbMain.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
             this.rtbMain.Size = new System.Drawing.Size(618, 336);
             this.rtbMain.TabIndex = 0;
             this.rtbMain.Text = "";
@@ -372,7 +377,9 @@
             // tsmiFont
             // 
             this.tsmiFont.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiFontColor});
+            this.tsmiFontColor,
+            this.tsmiBackColor,
+            this.tsmiTextFont});
             this.tsmiFont.Name = "tsmiFont";
             this.tsmiFont.Size = new System.Drawing.Size(58, 20);
             this.tsmiFont.Text = "Шрифт";
@@ -383,6 +390,23 @@
             this.tsmiFontColor.Size = new System.Drawing.Size(152, 22);
             this.tsmiFontColor.Text = "Цвет текста";
             this.tsmiFontColor.Click += new System.EventHandler(this.tsmiFontColor_Click);
+            // 
+            // tsmiBackColor
+            // 
+            this.tsmiBackColor.Name = "tsmiBackColor";
+            this.tsmiBackColor.Size = new System.Drawing.Size(152, 22);
+            this.tsmiBackColor.Text = "Цвет фона";
+            this.tsmiBackColor.Click += new System.EventHandler(this.tsmiBackColor_Click);
+            // 
+            // dlgFont
+            // 
+            // 
+            // tsmiTextFont
+            // 
+            this.tsmiTextFont.Name = "tsmiTextFont";
+            this.tsmiTextFont.Size = new System.Drawing.Size(152, 22);
+            this.tsmiTextFont.Text = "Шрифт";
+            this.tsmiTextFont.Click += new System.EventHandler(this.tsmiTextFont_Click);
             // 
             // MainForm
             // 
@@ -447,6 +471,9 @@
         private System.Windows.Forms.MaskedTextBox mtbTime;
         private System.Windows.Forms.ToolStripMenuItem tsmiFont;
         private System.Windows.Forms.ToolStripMenuItem tsmiFontColor;
+        private System.Windows.Forms.ToolStripMenuItem tsmiBackColor;
+        private System.Windows.Forms.FontDialog dlgFont;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTextFont;
     }
 }
 

@@ -290,5 +290,19 @@ namespace Textor
             dlgColor.ShowDialog();
             rtbMain.SelectionColor = dlgColor.Color;
         }
+
+        private void tsmiBackColor_Click(object sender, EventArgs e)
+        {
+            dlgColor.ShowDialog();
+            rtbMain.SelectionBackColor = dlgColor.Color;
+        }
+
+        private void tsmiTextFont_Click(object sender, EventArgs e)
+        {
+            if (dlgFont.ShowDialog() == DialogResult.OK)
+            {
+                rtbMain.SelectionFont = dlgFont.Font;
+            }
+        }
     }
 }
