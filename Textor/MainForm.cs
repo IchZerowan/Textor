@@ -304,5 +304,31 @@ namespace Textor
                 rtbMain.SelectionFont = dlgFont.Font;
             }
         }
+
+        private void MainForm_Resize(object sender, EventArgs e)
+        {
+            rtbMain.Height = this.Height-90;
+        }
+
+        private void stbtnAlign_left_Click(object sender, EventArgs e)
+        {
+            stbtnAlign_center.Checked = false;
+            stbtnAlign_right.Checked = false;
+            stbtnAlign_left.Checked = true;
+        }
+
+        private void stbtnAlign_center_Click(object sender, EventArgs e)
+        {
+            stbtnAlign_center.Checked = true;
+            stbtnAlign_right.Checked = false;
+            stbtnAlign_left.Checked = false;
+        }
+
+        private void stbtnAlign_right_Click(object sender, EventArgs e)
+        {
+            stbtnAlign_center.Checked = false;
+            stbtnAlign_right.Checked = true;
+            stbtnAlign_left.Checked = false;
+        }
     }
 }
