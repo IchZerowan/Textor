@@ -217,5 +217,10 @@ namespace Textor
             mtbTime.Visible = true;
             mtbTime.Focus();
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
