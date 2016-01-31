@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.rtbMain = new System.Windows.Forms.RichTextBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.msMain = new System.Windows.Forms.MenuStrip();
             this.tsmiFile = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiNew = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiOpen = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,6 +50,10 @@
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiSelectAll = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiClear = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiFont = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiFontColor = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiBackColor = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTextFont = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiView = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiBackground = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiInsert = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,42 +70,43 @@
             this.tsmiCalendarClose = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDateToday = new System.Windows.Forms.ToolStripMenuItem();
             this.mtbTime = new System.Windows.Forms.MaskedTextBox();
-            this.tsmiFont = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiFontColor = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiBackColor = new System.Windows.Forms.ToolStripMenuItem();
             this.dlgFont = new System.Windows.Forms.FontDialog();
-            this.tsmiTextFont = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.tsMain = new System.Windows.Forms.ToolStrip();
+            this.stbtnAlign_left = new System.Windows.Forms.ToolStripButton();
+            this.stbtnAlign_center = new System.Windows.Forms.ToolStripButton();
+            this.stbtnAlign_right = new System.Windows.Forms.ToolStripButton();
+            this.msMain.SuspendLayout();
             this.cmsCalendar.SuspendLayout();
+            this.tsMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // rtbMain
             // 
             this.rtbMain.AcceptsTab = true;
             this.rtbMain.AutoWordSelection = true;
-            this.rtbMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbMain.Location = new System.Drawing.Point(0, 24);
+            this.rtbMain.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.rtbMain.Location = new System.Drawing.Point(0, 52);
             this.rtbMain.Name = "rtbMain";
             this.rtbMain.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtbMain.Size = new System.Drawing.Size(618, 336);
+            this.rtbMain.Size = new System.Drawing.Size(618, 308);
             this.rtbMain.TabIndex = 0;
             this.rtbMain.Text = "";
             this.rtbMain.KeyUp += new System.Windows.Forms.KeyEventHandler(this.rtbMain_KeyUp);
             // 
-            // menuStrip1
+            // msMain
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.msMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiFile,
             this.tsmiEdit,
             this.tsmiFont,
             this.tsmiView,
             this.tsmiInsert,
             this.tsmiHelp});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(618, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
+            this.msMain.Location = new System.Drawing.Point(0, 0);
+            this.msMain.Name = "msMain";
+            this.msMain.Size = new System.Drawing.Size(618, 24);
+            this.msMain.TabIndex = 1;
+            this.msMain.Text = "menuStrip1";
             // 
             // tsmiFile
             // 
@@ -252,6 +257,37 @@
             this.tsmiClear.Text = "Очистить";
             this.tsmiClear.Click += new System.EventHandler(this.tsmiClear_Click);
             // 
+            // tsmiFont
+            // 
+            this.tsmiFont.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiFontColor,
+            this.tsmiBackColor,
+            this.tsmiTextFont});
+            this.tsmiFont.Name = "tsmiFont";
+            this.tsmiFont.Size = new System.Drawing.Size(58, 20);
+            this.tsmiFont.Text = "Шрифт";
+            // 
+            // tsmiFontColor
+            // 
+            this.tsmiFontColor.Name = "tsmiFontColor";
+            this.tsmiFontColor.Size = new System.Drawing.Size(137, 22);
+            this.tsmiFontColor.Text = "Цвет текста";
+            this.tsmiFontColor.Click += new System.EventHandler(this.tsmiFontColor_Click);
+            // 
+            // tsmiBackColor
+            // 
+            this.tsmiBackColor.Name = "tsmiBackColor";
+            this.tsmiBackColor.Size = new System.Drawing.Size(137, 22);
+            this.tsmiBackColor.Text = "Цвет фона";
+            this.tsmiBackColor.Click += new System.EventHandler(this.tsmiBackColor_Click);
+            // 
+            // tsmiTextFont
+            // 
+            this.tsmiTextFont.Name = "tsmiTextFont";
+            this.tsmiTextFont.Size = new System.Drawing.Size(137, 22);
+            this.tsmiTextFont.Text = "Шрифт";
+            this.tsmiTextFont.Click += new System.EventHandler(this.tsmiTextFont_Click);
+            // 
             // tsmiView
             // 
             this.tsmiView.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -263,7 +299,7 @@
             // tsmiBackground
             // 
             this.tsmiBackground.Name = "tsmiBackground";
-            this.tsmiBackground.Size = new System.Drawing.Size(152, 22);
+            this.tsmiBackground.Size = new System.Drawing.Size(97, 22);
             this.tsmiBackground.Text = "Фон";
             this.tsmiBackground.Click += new System.EventHandler(this.tsmiBackground_Click);
             // 
@@ -333,7 +369,7 @@
             // 
             this.Calendar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Calendar.ContextMenuStrip = this.cmsCalendar;
-            this.Calendar.Location = new System.Drawing.Point(432, 24);
+            this.Calendar.Location = new System.Drawing.Point(402, 75);
             this.Calendar.Name = "Calendar";
             this.Calendar.ShowWeekNumbers = true;
             this.Calendar.TabIndex = 2;
@@ -365,7 +401,7 @@
             // mtbTime
             // 
             this.mtbTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.mtbTime.Location = new System.Drawing.Point(584, 24);
+            this.mtbTime.Location = new System.Drawing.Point(554, 75);
             this.mtbTime.Mask = "90:00";
             this.mtbTime.Name = "mtbTime";
             this.mtbTime.Size = new System.Drawing.Size(34, 20);
@@ -374,58 +410,72 @@
             this.mtbTime.Visible = false;
             this.mtbTime.KeyDown += new System.Windows.Forms.KeyEventHandler(this.mtbTime_KeyDown);
             // 
-            // tsmiFont
+            // tsMain
             // 
-            this.tsmiFont.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiFontColor,
-            this.tsmiBackColor,
-            this.tsmiTextFont});
-            this.tsmiFont.Name = "tsmiFont";
-            this.tsmiFont.Size = new System.Drawing.Size(58, 20);
-            this.tsmiFont.Text = "Шрифт";
+            this.tsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stbtnAlign_left,
+            this.stbtnAlign_center,
+            this.stbtnAlign_right});
+            this.tsMain.Location = new System.Drawing.Point(0, 24);
+            this.tsMain.Name = "tsMain";
+            this.tsMain.Size = new System.Drawing.Size(618, 25);
+            this.tsMain.TabIndex = 5;
+            this.tsMain.Text = "toolStrip1";
             // 
-            // tsmiFontColor
+            // stbtnAlign_left
             // 
-            this.tsmiFontColor.Name = "tsmiFontColor";
-            this.tsmiFontColor.Size = new System.Drawing.Size(152, 22);
-            this.tsmiFontColor.Text = "Цвет текста";
-            this.tsmiFontColor.Click += new System.EventHandler(this.tsmiFontColor_Click);
+            this.stbtnAlign_left.Checked = true;
+            this.stbtnAlign_left.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.stbtnAlign_left.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.stbtnAlign_left.Image = global::Textor.Properties.Resources.edit_alignment_6041;
+            this.stbtnAlign_left.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.stbtnAlign_left.Name = "stbtnAlign_left";
+            this.stbtnAlign_left.Size = new System.Drawing.Size(23, 22);
+            this.stbtnAlign_left.Text = "выравнять по левому краю";
+            this.stbtnAlign_left.Click += new System.EventHandler(this.stbtnAlign_left_Click);
             // 
-            // tsmiBackColor
+            // stbtnAlign_center
             // 
-            this.tsmiBackColor.Name = "tsmiBackColor";
-            this.tsmiBackColor.Size = new System.Drawing.Size(152, 22);
-            this.tsmiBackColor.Text = "Цвет фона";
-            this.tsmiBackColor.Click += new System.EventHandler(this.tsmiBackColor_Click);
+            this.stbtnAlign_center.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.stbtnAlign_center.Image = global::Textor.Properties.Resources.edit_alignment_center;
+            this.stbtnAlign_center.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.stbtnAlign_center.Name = "stbtnAlign_center";
+            this.stbtnAlign_center.Size = new System.Drawing.Size(23, 22);
+            this.stbtnAlign_center.Text = "выравнять по центру";
+            this.stbtnAlign_center.Click += new System.EventHandler(this.stbtnAlign_center_Click);
             // 
-            // dlgFont
+            // stbtnAlign_right
             // 
-            // 
-            // tsmiTextFont
-            // 
-            this.tsmiTextFont.Name = "tsmiTextFont";
-            this.tsmiTextFont.Size = new System.Drawing.Size(152, 22);
-            this.tsmiTextFont.Text = "Шрифт";
-            this.tsmiTextFont.Click += new System.EventHandler(this.tsmiTextFont_Click);
+            this.stbtnAlign_right.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.stbtnAlign_right.Image = global::Textor.Properties.Resources.edit_alignment_right_1840;
+            this.stbtnAlign_right.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.stbtnAlign_right.Name = "stbtnAlign_right";
+            this.stbtnAlign_right.Size = new System.Drawing.Size(23, 22);
+            this.stbtnAlign_right.Text = "выравнять по правому краю";
+            this.stbtnAlign_right.Click += new System.EventHandler(this.stbtnAlign_right_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(618, 360);
+            this.Controls.Add(this.tsMain);
             this.Controls.Add(this.mtbTime);
             this.Controls.Add(this.Calendar);
             this.Controls.Add(this.rtbMain);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.msMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.msMain;
             this.Name = "MainForm";
             this.Text = "Textor";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.Resize += new System.EventHandler(this.MainForm_Resize);
+            this.msMain.ResumeLayout(false);
+            this.msMain.PerformLayout();
             this.cmsCalendar.ResumeLayout(false);
+            this.tsMain.ResumeLayout(false);
+            this.tsMain.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -434,7 +484,7 @@
         #endregion
 
         private System.Windows.Forms.RichTextBox rtbMain;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip msMain;
         private System.Windows.Forms.ToolStripMenuItem tsmiFile;
         private System.Windows.Forms.ToolStripMenuItem tsmiNew;
         private System.Windows.Forms.ToolStripMenuItem tsmiOpen;
@@ -474,6 +524,10 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiBackColor;
         private System.Windows.Forms.FontDialog dlgFont;
         private System.Windows.Forms.ToolStripMenuItem tsmiTextFont;
+        private System.Windows.Forms.ToolStrip tsMain;
+        private System.Windows.Forms.ToolStripButton stbtnAlign_left;
+        private System.Windows.Forms.ToolStripButton stbtnAlign_center;
+        private System.Windows.Forms.ToolStripButton stbtnAlign_right;
     }
 }
 
