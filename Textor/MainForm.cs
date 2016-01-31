@@ -5,11 +5,13 @@ using System.Drawing.Printing;
 using System.IO;
 using System.Windows.Forms;
 using System.Threading;
+using Microsoft.Win32;
 
 namespace Textor
 {
     public partial class MainForm : Form
     {
+        const string regKey = "Textor";
         const string path = "data.ini";
 
         public MainForm()
@@ -220,7 +222,45 @@ namespace Textor
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            openReg();
+        }
 
+        private void saveReg()
+        {
+            RegistryKey rk = null;
+            try
+            {
+                rk = Registry.CurrentUser.CreateSubKey(regKey);
+                if (rk == null) return;
+                rk.SetValue("width", this.Size.Width);
+                rk.SetValue("height", this.Size.Height);
+            }
+            finally
+            {
+                if (rk != null) rk.Close();
+            }
+        }
+
+        private void openReg()
+        {
+            RegistryKey rk = null;
+            try
+            {
+                rk = Registry.CurrentUser.OpenSubKey(regKey);
+                if (rk != null)
+                {
+                    this.Size = new Size((int)rk.GetValue("width"), (int)rk.GetValue("height"));
+                }
+            }
+            finally
+            {
+                if (rk != null) rk.Close();
+            }
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            saveReg();
         }
     }
 }
