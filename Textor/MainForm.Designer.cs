@@ -37,17 +37,17 @@
             this.tsmiOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSave = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSaveAs = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiSeparetor1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiPrint = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiExit = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiUndo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiRedo = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiCut = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCopy = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiPaste = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiSelectAll = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiClear = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiFont = new System.Windows.Forms.ToolStripMenuItem();
@@ -117,7 +117,7 @@
             this.tsmiOpen,
             this.tsmiSave,
             this.tsmiSaveAs,
-            this.toolStripMenuItem1,
+            this.tsmiSeparetor1,
             this.tsmiPrint,
             this.tsmiExit});
             this.tsmiFile.Name = "tsmiFile";
@@ -157,10 +157,10 @@
             this.tsmiSaveAs.Text = "Сохранить как";
             this.tsmiSaveAs.Click += new System.EventHandler(this.tsmiSaveAs_Click);
             // 
-            // toolStripMenuItem1
+            // tsmiSeparetor1
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(213, 6);
+            this.tsmiSeparetor1.Name = "tsmiSeparetor1";
+            this.tsmiSeparetor1.Size = new System.Drawing.Size(213, 6);
             // 
             // tsmiPrint
             // 
@@ -183,11 +183,11 @@
             this.tsmiEdit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiUndo,
             this.tsmiRedo,
-            this.toolStripMenuItem2,
+            this.tsmiSeparator2,
             this.tsmiCut,
             this.tsmiCopy,
             this.tsmiPaste,
-            this.toolStripMenuItem3,
+            this.tsmiSeparator3,
             this.tsmiSelectAll,
             this.tsmiClear});
             this.tsmiEdit.Name = "tsmiEdit";
@@ -210,10 +210,10 @@
             this.tsmiRedo.Text = "Вернуть";
             this.tsmiRedo.Click += new System.EventHandler(this.tsmiRedo_Click);
             // 
-            // toolStripMenuItem2
+            // tsmiSeparator2
             // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(187, 6);
+            this.tsmiSeparator2.Name = "tsmiSeparator2";
+            this.tsmiSeparator2.Size = new System.Drawing.Size(187, 6);
             // 
             // tsmiCut
             // 
@@ -239,10 +239,10 @@
             this.tsmiPaste.Text = "Вставить";
             this.tsmiPaste.Click += new System.EventHandler(this.tsmiPaste_Click);
             // 
-            // toolStripMenuItem3
+            // tsmiSeparator3
             // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(187, 6);
+            this.tsmiSeparator3.Name = "tsmiSeparator3";
+            this.tsmiSeparator3.Size = new System.Drawing.Size(187, 6);
             // 
             // tsmiSelectAll
             // 
@@ -272,21 +272,21 @@
             // tsmiFontColor
             // 
             this.tsmiFontColor.Name = "tsmiFontColor";
-            this.tsmiFontColor.Size = new System.Drawing.Size(137, 22);
+            this.tsmiFontColor.Size = new System.Drawing.Size(152, 22);
             this.tsmiFontColor.Text = "Цвет текста";
             this.tsmiFontColor.Click += new System.EventHandler(this.tsmiFontColor_Click);
             // 
             // tsmiBackColor
             // 
             this.tsmiBackColor.Name = "tsmiBackColor";
-            this.tsmiBackColor.Size = new System.Drawing.Size(137, 22);
+            this.tsmiBackColor.Size = new System.Drawing.Size(152, 22);
             this.tsmiBackColor.Text = "Цвет фона";
             this.tsmiBackColor.Click += new System.EventHandler(this.tsmiBackColor_Click);
             // 
             // tsmiTextFont
             // 
             this.tsmiTextFont.Name = "tsmiTextFont";
-            this.tsmiTextFont.Size = new System.Drawing.Size(137, 22);
+            this.tsmiTextFont.Size = new System.Drawing.Size(152, 22);
             this.tsmiTextFont.Text = "Шрифт";
             this.tsmiTextFont.Click += new System.EventHandler(this.tsmiTextFont_Click);
             // 
@@ -502,16 +502,16 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiOpen;
         private System.Windows.Forms.ToolStripMenuItem tsmiSave;
         private System.Windows.Forms.ToolStripMenuItem tsmiSaveAs;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripSeparator tsmiSeparetor1;
         private System.Windows.Forms.ToolStripMenuItem tsmiPrint;
         private System.Windows.Forms.ToolStripMenuItem tsmiExit;
         private System.Windows.Forms.ToolStripMenuItem tsmiEdit;
         private System.Windows.Forms.ToolStripMenuItem tsmiUndo;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripSeparator tsmiSeparator2;
         private System.Windows.Forms.ToolStripMenuItem tsmiCut;
         private System.Windows.Forms.ToolStripMenuItem tsmiCopy;
         private System.Windows.Forms.ToolStripMenuItem tsmiPaste;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripSeparator tsmiSeparator3;
         private System.Windows.Forms.ToolStripMenuItem tsmiClear;
         private System.Windows.Forms.ToolStripMenuItem tsmiView;
         private System.Windows.Forms.ToolStripMenuItem tsmiBackground;
