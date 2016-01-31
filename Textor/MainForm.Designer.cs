@@ -460,11 +460,11 @@
             // tsbtnColor
             // 
             this.tsbtnColor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbtnColor.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnColor.Image")));
+            this.tsbtnColor.Image = global::Textor.Properties.Resources.edit_color_9991;
             this.tsbtnColor.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtnColor.Name = "tsbtnColor";
             this.tsbtnColor.Size = new System.Drawing.Size(32, 22);
-            this.tsbtnColor.Text = "toolStripSplitButton1";
+            this.tsbtnColor.Text = "Цвет текста";
             // 
             // MainForm
             // 
