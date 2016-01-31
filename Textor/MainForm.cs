@@ -13,10 +13,12 @@ namespace Textor
     {
         const string regKey = "Textor";
         const string path = "data.ini";
+        string[] args;
 
-        public MainForm()
+        public MainForm(string[] args)
         {
             InitializeComponent();
+            this.args = args;
         }
 
         private void Save()
@@ -223,6 +225,26 @@ namespace Textor
         private void MainForm_Load(object sender, EventArgs e)
         {
             openReg();
+            try
+            {
+                if (args.Length == 0) return;
+                string path = args[0];
+                string ext = getFileExtension(path).ToUpper();
+                if (ext == "RTF")
+                    rtbMain.LoadFile(path, RichTextBoxStreamType.RichText);
+                else if (ext == "TXT")
+                    rtbMain.Text = File.ReadAllText(path);
+                else rtbMain.LoadFile(path, RichTextBoxStreamType.PlainText);
+            }
+            finally
+            {
+
+            }
+        }
+
+        string getFileExtension(string fileName)
+        {
+            return fileName.Substring(fileName.LastIndexOf(".") + 1);
         }
 
         private void saveReg()
