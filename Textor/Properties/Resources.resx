@@ -124,16 +124,19 @@
   <data name="edit-alignment_left" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit-alignment_6041.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="edit-alignment-right" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\edit-alignment-right_1840.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="edit-alignment_6041" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit-alignment_6041.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="edit-alignment-center_6463" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit-alignment-center_6463.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="edit-alignment-right" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit-alignment-right_1840.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="edit-alignment-right_1840" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit-alignment-right_1840.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit-color_9991" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit-color_9991.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

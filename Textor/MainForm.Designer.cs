@@ -75,6 +75,7 @@
             this.stbtnAlign_left = new System.Windows.Forms.ToolStripButton();
             this.stbtnAlign_center = new System.Windows.Forms.ToolStripButton();
             this.stbtnAlign_right = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnColor = new System.Windows.Forms.ToolStripSplitButton();
             this.msMain.SuspendLayout();
             this.cmsCalendar.SuspendLayout();
             this.tsMain.SuspendLayout();
@@ -416,7 +417,8 @@
             this.tsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.stbtnAlign_left,
             this.stbtnAlign_center,
-            this.stbtnAlign_right});
+            this.stbtnAlign_right,
+            this.tsbtnColor});
             this.tsMain.Location = new System.Drawing.Point(0, 24);
             this.tsMain.Name = "tsMain";
             this.tsMain.Size = new System.Drawing.Size(618, 25);
@@ -454,6 +456,15 @@
             this.stbtnAlign_right.Size = new System.Drawing.Size(23, 22);
             this.stbtnAlign_right.Text = "выравнять по правому краю";
             this.stbtnAlign_right.Click += new System.EventHandler(this.stbtnAlign_right_Click);
+            // 
+            // tsbtnColor
+            // 
+            this.tsbtnColor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbtnColor.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnColor.Image")));
+            this.tsbtnColor.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnColor.Name = "tsbtnColor";
+            this.tsbtnColor.Size = new System.Drawing.Size(32, 22);
+            this.tsbtnColor.Text = "toolStripSplitButton1";
             // 
             // MainForm
             // 
@@ -529,6 +540,7 @@
         private System.Windows.Forms.ToolStripButton stbtnAlign_left;
         private System.Windows.Forms.ToolStripButton stbtnAlign_center;
         private System.Windows.Forms.ToolStripButton stbtnAlign_right;
+        private System.Windows.Forms.ToolStripSplitButton tsbtnColor;
     }
 }
 
