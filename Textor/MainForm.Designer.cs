@@ -66,6 +66,8 @@
             this.tsmiCalendarClose = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDateToday = new System.Windows.Forms.ToolStripMenuItem();
             this.mtbTime = new System.Windows.Forms.MaskedTextBox();
+            this.tsmiFont = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiFontColor = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.cmsCalendar.SuspendLayout();
             this.SuspendLayout();
@@ -86,6 +88,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiFile,
             this.tsmiEdit,
+            this.tsmiFont,
             this.tsmiView,
             this.tsmiInsert,
             this.tsmiHelp});
@@ -255,7 +258,7 @@
             // tsmiBackground
             // 
             this.tsmiBackground.Name = "tsmiBackground";
-            this.tsmiBackground.Size = new System.Drawing.Size(97, 22);
+            this.tsmiBackground.Size = new System.Drawing.Size(152, 22);
             this.tsmiBackground.Text = "Фон";
             this.tsmiBackground.Click += new System.EventHandler(this.tsmiBackground_Click);
             // 
@@ -366,6 +369,21 @@
             this.mtbTime.Visible = false;
             this.mtbTime.KeyDown += new System.Windows.Forms.KeyEventHandler(this.mtbTime_KeyDown);
             // 
+            // tsmiFont
+            // 
+            this.tsmiFont.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiFontColor});
+            this.tsmiFont.Name = "tsmiFont";
+            this.tsmiFont.Size = new System.Drawing.Size(58, 20);
+            this.tsmiFont.Text = "Шрифт";
+            // 
+            // tsmiFontColor
+            // 
+            this.tsmiFontColor.Name = "tsmiFontColor";
+            this.tsmiFontColor.Size = new System.Drawing.Size(152, 22);
+            this.tsmiFontColor.Text = "Цвет текста";
+            this.tsmiFontColor.Click += new System.EventHandler(this.tsmiFontColor_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -427,6 +445,8 @@
         private System.Windows.Forms.ToolStripMenuItem TsmiTimeNow;
         private System.Windows.Forms.ToolStripMenuItem tsmiTimeOther;
         private System.Windows.Forms.MaskedTextBox mtbTime;
+        private System.Windows.Forms.ToolStripMenuItem tsmiFont;
+        private System.Windows.Forms.ToolStripMenuItem tsmiFontColor;
     }
 }
 

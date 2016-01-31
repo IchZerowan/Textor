@@ -284,5 +284,11 @@ namespace Textor
         {
             saveReg();
         }
+
+        private void tsmiFontColor_Click(object sender, EventArgs e)
+        {
+            dlgColor.ShowDialog();
+            rtbMain.SelectionColor = dlgColor.Color;
+        }
     }
 }
