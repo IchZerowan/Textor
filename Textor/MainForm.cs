@@ -312,23 +312,59 @@ namespace Textor
 
         private void stbtnAlign_left_Click(object sender, EventArgs e)
         {
-            stbtnAlign_center.Checked = false;
-            stbtnAlign_right.Checked = false;
             stbtnAlign_left.Checked = true;
+            stbtnAlign_center.Checked = false;
+            stbtnAlign_right.Checked = false;  
+            rtbMain.SelectionAlignment = HorizontalAlignment.Left;
         }
 
         private void stbtnAlign_center_Click(object sender, EventArgs e)
         {
-            stbtnAlign_center.Checked = true;
-            stbtnAlign_right.Checked = false;
             stbtnAlign_left.Checked = false;
+            stbtnAlign_center.Checked = true;
+            stbtnAlign_right.Checked = false;          
+            rtbMain.SelectionAlignment = HorizontalAlignment.Center;
         }
 
         private void stbtnAlign_right_Click(object sender, EventArgs e)
         {
+            stbtnAlign_left.Checked = false;
             stbtnAlign_center.Checked = false;
             stbtnAlign_right.Checked = true;
-            stbtnAlign_left.Checked = false;
+            rtbMain.SelectionAlignment = HorizontalAlignment.Right;
+        }
+
+        private void rtbMain_SelectionChanged(object sender, EventArgs e)
+        {
+            switch (rtbMain.SelectionAlignment)
+            {
+                case HorizontalAlignment.Left: {
+                        stbtnAlign_left.Checked = true;
+                        stbtnAlign_center.Checked = false;
+                        stbtnAlign_right.Checked = false;
+                        break;
+                    }
+                case HorizontalAlignment.Center: {
+                        stbtnAlign_left.Checked = false;
+                        stbtnAlign_center.Checked = true;
+                        stbtnAlign_right.Checked = false;
+                        break;
+                    }
+                case HorizontalAlignment.Right:
+                    {
+                        stbtnAlign_left.Checked = false;
+                        stbtnAlign_center.Checked = false;
+                        stbtnAlign_right.Checked = true;
+                        break;
+                    }
+                default:
+                    {
+                        stbtnAlign_left.Checked = false;
+                        stbtnAlign_center.Checked = false;
+                        stbtnAlign_right.Checked = false;
+                        break;
+                    }
+            }
         }
     }
 }

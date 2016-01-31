@@ -91,6 +91,7 @@
             this.rtbMain.Size = new System.Drawing.Size(618, 308);
             this.rtbMain.TabIndex = 0;
             this.rtbMain.Text = "";
+            this.rtbMain.SelectionChanged += new System.EventHandler(this.rtbMain_SelectionChanged);
             this.rtbMain.KeyUp += new System.Windows.Forms.KeyEventHandler(this.rtbMain_KeyUp);
             // 
             // msMain
