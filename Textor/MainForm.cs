@@ -224,6 +224,7 @@ namespace Textor
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+
             openReg();
             try
             {
@@ -239,6 +240,12 @@ namespace Textor
             finally
             {
 
+            }
+            fontComboBox.Populate(true);
+            foreach (FontFamily ff in FontFamily.Families)
+            {
+                if (ff.IsStyleAvailable(FontStyle.Regular))
+                    fontComboBox.Items.Add(ff.Name);
             }
         }
 
@@ -307,14 +314,14 @@ namespace Textor
 
         private void MainForm_Resize(object sender, EventArgs e)
         {
-            rtbMain.Height = this.Height-90;
+            rtbMain.Height = this.Height - 90;
         }
 
         private void stbtnAlign_left_Click(object sender, EventArgs e)
         {
             stbtnAlign_left.Checked = true;
             stbtnAlign_center.Checked = false;
-            stbtnAlign_right.Checked = false;  
+            stbtnAlign_right.Checked = false;
             rtbMain.SelectionAlignment = HorizontalAlignment.Left;
         }
 
@@ -322,7 +329,7 @@ namespace Textor
         {
             stbtnAlign_left.Checked = false;
             stbtnAlign_center.Checked = true;
-            stbtnAlign_right.Checked = false;          
+            stbtnAlign_right.Checked = false;
             rtbMain.SelectionAlignment = HorizontalAlignment.Center;
         }
 
@@ -338,13 +345,15 @@ namespace Textor
         {
             switch (rtbMain.SelectionAlignment)
             {
-                case HorizontalAlignment.Left: {
+                case HorizontalAlignment.Left:
+                    {
                         stbtnAlign_left.Checked = true;
                         stbtnAlign_center.Checked = false;
                         stbtnAlign_right.Checked = false;
                         break;
                     }
-                case HorizontalAlignment.Center: {
+                case HorizontalAlignment.Center:
+                    {
                         stbtnAlign_left.Checked = false;
                         stbtnAlign_center.Checked = true;
                         stbtnAlign_right.Checked = false;
@@ -366,7 +375,7 @@ namespace Textor
                     }
             }
 
-            themeColorPickerToolStripSplitButton.Color =  rtbMain.SelectionColor;
+            themeColorPickerToolStripSplitButton.Color = rtbMain.SelectionColor;
         }
 
         private void themeColorPickerToolStripSplitButton_ButtonClick(object sender, EventArgs e)

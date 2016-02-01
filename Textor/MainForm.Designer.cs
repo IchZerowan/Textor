@@ -77,6 +77,7 @@
             this.stbtnAlign_right = new System.Windows.Forms.ToolStripButton();
             this.themeColorPickerToolStripSplitButton = new ExHtmlEditor.ColorPicker.ThemeColorPickerToolStripSplitButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.fontComboBox = new FontCombo.FontComboBox();
             this.msMain.SuspendLayout();
             this.cmsCalendar.SuspendLayout();
             this.tsMain.SuspendLayout();
@@ -416,10 +417,10 @@
             // tsMain
             // 
             this.tsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.themeColorPickerToolStripSplitButton,
             this.stbtnAlign_left,
             this.stbtnAlign_center,
             this.stbtnAlign_right,
-            this.themeColorPickerToolStripSplitButton,
             this.toolStripLabel1});
             this.tsMain.Location = new System.Drawing.Point(0, 24);
             this.tsMain.Name = "tsMain";
@@ -463,14 +464,14 @@
             // 
             this.themeColorPickerToolStripSplitButton.Color = System.Drawing.Color.Black;
             this.themeColorPickerToolStripSplitButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.themeColorPickerToolStripSplitButton.DropDownButtonWidth = 6;
+            this.themeColorPickerToolStripSplitButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.themeColorPickerToolStripSplitButton.Image = ((System.Drawing.Image)(resources.GetObject("themeColorPickerToolStripSplitButton.Image")));
             this.themeColorPickerToolStripSplitButton.ImageHeight = 16;
             this.themeColorPickerToolStripSplitButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.themeColorPickerToolStripSplitButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.themeColorPickerToolStripSplitButton.ImageWidth = 32;
             this.themeColorPickerToolStripSplitButton.Name = "themeColorPickerToolStripSplitButton";
-            this.themeColorPickerToolStripSplitButton.Size = new System.Drawing.Size(27, 22);
+            this.themeColorPickerToolStripSplitButton.Size = new System.Drawing.Size(32, 22);
             this.themeColorPickerToolStripSplitButton.Text = "Цвет текста";
             this.themeColorPickerToolStripSplitButton.ColorSelected += new ExHtmlEditor.ColorPicker.ThemeColorPickerToolStripSplitButton.colorSelected(this.themeColorPickerToolStripSplitButton_ColorSelected);
             this.themeColorPickerToolStripSplitButton.ButtonClick += new System.EventHandler(this.themeColorPickerToolStripSplitButton_ButtonClick);
@@ -480,11 +481,24 @@
             this.toolStripLabel1.Name = "toolStripLabel1";
             this.toolStripLabel1.Size = new System.Drawing.Size(0, 22);
             // 
+            // fontComboBox
+            // 
+            this.fontComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.fontComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.fontComboBox.FormattingEnabled = true;
+            this.fontComboBox.IntegralHeight = false;
+            this.fontComboBox.Location = new System.Drawing.Point(143, 27);
+            this.fontComboBox.MaxDropDownItems = 20;
+            this.fontComboBox.Name = "fontComboBox";
+            this.fontComboBox.Size = new System.Drawing.Size(121, 21);
+            this.fontComboBox.TabIndex = 6;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(618, 360);
+            this.Controls.Add(this.fontComboBox);
             this.Controls.Add(this.tsMain);
             this.Controls.Add(this.mtbTime);
             this.Controls.Add(this.Calendar);
@@ -556,6 +570,7 @@
         private System.Windows.Forms.ToolStripButton stbtnAlign_right;
         private ExHtmlEditor.ColorPicker.ThemeColorPickerToolStripSplitButton themeColorPickerToolStripSplitButton;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private FontCombo.FontComboBox fontComboBox;
     }
 }
 
