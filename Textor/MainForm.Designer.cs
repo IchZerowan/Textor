@@ -78,9 +78,11 @@
             this.themeColorPickerToolStripSplitButton = new ExHtmlEditor.ColorPicker.ThemeColorPickerToolStripSplitButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.fontComboBox = new FontCombo.FontComboBox();
+            this.nudTextSize = new System.Windows.Forms.NumericUpDown();
             this.msMain.SuspendLayout();
             this.cmsCalendar.SuspendLayout();
             this.tsMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTextSize)).BeginInit();
             this.SuspendLayout();
             // 
             // rtbMain
@@ -496,11 +498,30 @@
             this.fontComboBox.TabIndex = 6;
             this.fontComboBox.SelectedIndexChanged += new System.EventHandler(this.fontComboBox_SelectedIndexChanged);
             // 
+            // nudTextSize
+            // 
+            this.nudTextSize.Location = new System.Drawing.Point(294, 24);
+            this.nudTextSize.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.nudTextSize.Name = "nudTextSize";
+            this.nudTextSize.Size = new System.Drawing.Size(45, 20);
+            this.nudTextSize.TabIndex = 7;
+            this.nudTextSize.Value = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            this.nudTextSize.ValueChanged += new System.EventHandler(this.nudTextSize_ValueChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(618, 360);
+            this.Controls.Add(this.nudTextSize);
             this.Controls.Add(this.fontComboBox);
             this.Controls.Add(this.tsMain);
             this.Controls.Add(this.mtbTime);
@@ -519,6 +540,7 @@
             this.cmsCalendar.ResumeLayout(false);
             this.tsMain.ResumeLayout(false);
             this.tsMain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTextSize)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -574,6 +596,7 @@
         private ExHtmlEditor.ColorPicker.ThemeColorPickerToolStripSplitButton themeColorPickerToolStripSplitButton;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private FontCombo.FontComboBox fontComboBox;
+        private System.Windows.Forms.NumericUpDown nudTextSize;
     }
 }
 

@@ -20,7 +20,7 @@ namespace Textor
             InitializeComponent();
             this.args = args;
             fontComboBox.Populate(true);
-            fontComboBox.SelectedItem = "Times New Roman";
+            fontComboBox.Text = rtbMain.Font.Name;
         }
 
         private void Save()
@@ -46,10 +46,12 @@ namespace Textor
             RichTextBox rtb = (RichTextBox)sender;
             if (e.KeyCode == Keys.Space || e.KeyCode == Keys.Tab || e.KeyCode == Keys.Enter)
             {
+                Font font = new Font(rtbMain.SelectionFont, rtbMain.SelectionFont.Style);
                 this.SuspendLayout();
                 rtb.Undo();
                 rtb.Redo();
                 this.ResumeLayout();
+                rtbMain.SelectionFont = font;
             }
         }
 
@@ -289,18 +291,24 @@ namespace Textor
 
         private void tsmiFontColor_Click(object sender, EventArgs e)
         {
+            if (rtbMain.SelectionColor != null)
+                dlgColor.Color = rtbMain.SelectionColor;
             dlgColor.ShowDialog();
             rtbMain.SelectionColor = dlgColor.Color;
         }
 
         private void tsmiBackColor_Click(object sender, EventArgs e)
         {
+            if (rtbMain.SelectionBackColor != null)
+                dlgColor.Color = rtbMain.SelectionBackColor;
             dlgColor.ShowDialog();
             rtbMain.SelectionBackColor = dlgColor.Color;
         }
 
         private void tsmiTextFont_Click(object sender, EventArgs e)
         {
+            if (rtbMain.SelectionFont != null)
+                dlgFont.Font = rtbMain.SelectionFont;
             if (dlgFont.ShowDialog() == DialogResult.OK)
             {
                 rtbMain.SelectionFont = dlgFont.Font;
@@ -372,7 +380,7 @@ namespace Textor
 
             themeColorPickerToolStripSplitButton.Color = rtbMain.SelectionColor;
             if (rtbMain.SelectionFont != null)
-                fontComboBox.Font = rtbMain.SelectionFont;
+                fontComboBox.Text = rtbMain.SelectionFont.Name;
         }
 
         private void themeColorPickerToolStripSplitButton_ButtonClick(object sender, EventArgs e)
@@ -388,6 +396,11 @@ namespace Textor
         private void fontComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             rtbMain.SelectionFont = new Font(fontComboBox.Text, rtbMain.SelectionFont.Size);
+        }
+
+        private void nudTextSize_ValueChanged(object sender, EventArgs e)
+        {
+            rtbMain.SelectionFont = new Font(rtbMain.SelectedText, (float)nudTextSize.Value);
         }
     }
 }
