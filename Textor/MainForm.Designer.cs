@@ -75,7 +75,8 @@
             this.stbtnAlign_left = new System.Windows.Forms.ToolStripButton();
             this.stbtnAlign_center = new System.Windows.Forms.ToolStripButton();
             this.stbtnAlign_right = new System.Windows.Forms.ToolStripButton();
-            this.tsbtnColor = new System.Windows.Forms.ToolStripSplitButton();
+            this.themeColorPickerToolStripSplitButton = new ExHtmlEditor.ColorPicker.ThemeColorPickerToolStripSplitButton();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.msMain.SuspendLayout();
             this.cmsCalendar.SuspendLayout();
             this.tsMain.SuspendLayout();
@@ -272,21 +273,21 @@
             // tsmiFontColor
             // 
             this.tsmiFontColor.Name = "tsmiFontColor";
-            this.tsmiFontColor.Size = new System.Drawing.Size(152, 22);
+            this.tsmiFontColor.Size = new System.Drawing.Size(137, 22);
             this.tsmiFontColor.Text = "Цвет текста";
             this.tsmiFontColor.Click += new System.EventHandler(this.tsmiFontColor_Click);
             // 
             // tsmiBackColor
             // 
             this.tsmiBackColor.Name = "tsmiBackColor";
-            this.tsmiBackColor.Size = new System.Drawing.Size(152, 22);
+            this.tsmiBackColor.Size = new System.Drawing.Size(137, 22);
             this.tsmiBackColor.Text = "Цвет фона";
             this.tsmiBackColor.Click += new System.EventHandler(this.tsmiBackColor_Click);
             // 
             // tsmiTextFont
             // 
             this.tsmiTextFont.Name = "tsmiTextFont";
-            this.tsmiTextFont.Size = new System.Drawing.Size(152, 22);
+            this.tsmiTextFont.Size = new System.Drawing.Size(137, 22);
             this.tsmiTextFont.Text = "Шрифт";
             this.tsmiTextFont.Click += new System.EventHandler(this.tsmiTextFont_Click);
             // 
@@ -418,7 +419,8 @@
             this.stbtnAlign_left,
             this.stbtnAlign_center,
             this.stbtnAlign_right,
-            this.tsbtnColor});
+            this.themeColorPickerToolStripSplitButton,
+            this.toolStripLabel1});
             this.tsMain.Location = new System.Drawing.Point(0, 24);
             this.tsMain.Name = "tsMain";
             this.tsMain.Size = new System.Drawing.Size(618, 25);
@@ -457,14 +459,26 @@
             this.stbtnAlign_right.Text = "выравнять по правому краю";
             this.stbtnAlign_right.Click += new System.EventHandler(this.stbtnAlign_right_Click);
             // 
-            // tsbtnColor
+            // themeColorPickerToolStripSplitButton
             // 
-            this.tsbtnColor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbtnColor.Image = global::Textor.Properties.Resources.edit_color_9991;
-            this.tsbtnColor.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnColor.Name = "tsbtnColor";
-            this.tsbtnColor.Size = new System.Drawing.Size(32, 22);
-            this.tsbtnColor.Text = "Цвет текста";
+            this.themeColorPickerToolStripSplitButton.Color = System.Drawing.Color.Black;
+            this.themeColorPickerToolStripSplitButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.themeColorPickerToolStripSplitButton.DropDownButtonWidth = 6;
+            this.themeColorPickerToolStripSplitButton.Image = ((System.Drawing.Image)(resources.GetObject("themeColorPickerToolStripSplitButton.Image")));
+            this.themeColorPickerToolStripSplitButton.ImageHeight = 16;
+            this.themeColorPickerToolStripSplitButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.themeColorPickerToolStripSplitButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.themeColorPickerToolStripSplitButton.ImageWidth = 32;
+            this.themeColorPickerToolStripSplitButton.Name = "themeColorPickerToolStripSplitButton";
+            this.themeColorPickerToolStripSplitButton.Size = new System.Drawing.Size(27, 22);
+            this.themeColorPickerToolStripSplitButton.Text = "Цвет текста";
+            this.themeColorPickerToolStripSplitButton.ColorSelected += new ExHtmlEditor.ColorPicker.ThemeColorPickerToolStripSplitButton.colorSelected(this.themeColorPickerToolStripSplitButton_ColorSelected);
+            this.themeColorPickerToolStripSplitButton.ButtonClick += new System.EventHandler(this.themeColorPickerToolStripSplitButton_ButtonClick);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(0, 22);
             // 
             // MainForm
             // 
@@ -540,7 +554,8 @@
         private System.Windows.Forms.ToolStripButton stbtnAlign_left;
         private System.Windows.Forms.ToolStripButton stbtnAlign_center;
         private System.Windows.Forms.ToolStripButton stbtnAlign_right;
-        private System.Windows.Forms.ToolStripSplitButton tsbtnColor;
+        private ExHtmlEditor.ColorPicker.ThemeColorPickerToolStripSplitButton themeColorPickerToolStripSplitButton;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
     }
 }
 

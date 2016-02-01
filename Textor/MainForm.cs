@@ -365,6 +365,18 @@ namespace Textor
                         break;
                     }
             }
+
+            themeColorPickerToolStripSplitButton.Color =  rtbMain.SelectionColor;
+        }
+
+        private void themeColorPickerToolStripSplitButton_ButtonClick(object sender, EventArgs e)
+        {
+            rtbMain.SelectionColor = themeColorPickerToolStripSplitButton.Color;
+        }
+
+        private void themeColorPickerToolStripSplitButton_ColorSelected(object sender, ColorSelectedArg e)
+        {
+            rtbMain.SelectionColor = e.Color;
         }
     }
 }
