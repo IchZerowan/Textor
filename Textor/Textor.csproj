@@ -95,6 +95,15 @@
   <ItemGroup>
     <None Include="Resources\edit-alignment-right_1840.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\formatbold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\formatitalic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\formatunderline.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

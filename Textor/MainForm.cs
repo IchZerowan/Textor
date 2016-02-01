@@ -21,6 +21,7 @@ namespace Textor
             this.args = args;
             fontComboBox.Populate(true);
             fontComboBox.Text = rtbMain.Font.Name;
+            rtbMain.Font = new Font(rtbMain.Text, 12);
         }
 
         private void Save()
@@ -322,29 +323,23 @@ namespace Textor
 
         private void stbtnAlign_left_Click(object sender, EventArgs e)
         {
-            stbtnAlign_left.Checked = true;
-            stbtnAlign_center.Checked = false;
-            stbtnAlign_right.Checked = false;
             rtbMain.SelectionAlignment = HorizontalAlignment.Left;
+            CheckAlign();
         }
 
         private void stbtnAlign_center_Click(object sender, EventArgs e)
         {
-            stbtnAlign_left.Checked = false;
-            stbtnAlign_center.Checked = true;
-            stbtnAlign_right.Checked = false;
             rtbMain.SelectionAlignment = HorizontalAlignment.Center;
+            CheckAlign();
         }
 
         private void stbtnAlign_right_Click(object sender, EventArgs e)
         {
-            stbtnAlign_left.Checked = false;
-            stbtnAlign_center.Checked = false;
-            stbtnAlign_right.Checked = true;
             rtbMain.SelectionAlignment = HorizontalAlignment.Right;
+            CheckAlign();
         }
 
-        private void rtbMain_SelectionChanged(object sender, EventArgs e)
+        private void CheckAlign()
         {
             switch (rtbMain.SelectionAlignment)
             {
@@ -377,10 +372,44 @@ namespace Textor
                         break;
                     }
             }
+        }
 
-            themeColorPickerToolStripSplitButton.Color = rtbMain.SelectionColor;
+        private void CheckFont()
+        {
+            tsbtnBold.Checked = false;
+            tsbtnItalic.Checked = false;
+            tsbtnUnderlined.Checked = false;
+            switch (rtbMain.SelectionFont.Style)
+            {
+                case FontStyle.Bold:
+                    {
+                        tsbtnBold.Checked = true;
+                        break;
+                    }
+                case FontStyle.Italic:
+                    {
+                        tsbtnItalic.Checked = true;
+                        break;
+                    }
+                case FontStyle.Underline:
+                    {
+                        tsbtnUnderlined.Checked = true;
+                        break;
+                    }
+            }
+        }
+
+        private void rtbMain_SelectionChanged(object sender, EventArgs e)
+        {
+            CheckAlign();
+            if (rtbMain.SelectionColor != null)
+                themeColorPickerToolStripSplitButton.Color = rtbMain.SelectionColor;
             if (rtbMain.SelectionFont != null)
+            {
                 fontComboBox.Text = rtbMain.SelectionFont.Name;
+                nudTextSize.Value = (decimal)rtbMain.SelectionFont.Size;
+                CheckFont();
+            }
         }
 
         private void themeColorPickerToolStripSplitButton_ButtonClick(object sender, EventArgs e)
@@ -401,6 +430,24 @@ namespace Textor
         private void nudTextSize_ValueChanged(object sender, EventArgs e)
         {
             rtbMain.SelectionFont = new Font(rtbMain.SelectedText, (float)nudTextSize.Value);
+        }
+
+        private void tsbtnBold_Click(object sender, EventArgs e)
+        {
+            rtbMain.SelectionFont = new Font(rtbMain.SelectionFont, rtbMain.SelectionFont.Style != FontStyle.Bold ? FontStyle.Bold : FontStyle.Regular);
+            CheckFont();
+        }
+
+        private void tsbtnItalic_Click(object sender, EventArgs e)
+        {
+            rtbMain.SelectionFont = new Font(rtbMain.SelectionFont, rtbMain.SelectionFont.Style != FontStyle.Italic ? FontStyle.Italic : FontStyle.Regular);
+            CheckFont();
+        }
+
+        private void tsbtnUnderlined_Click(object sender, EventArgs e)
+        {
+            rtbMain.SelectionFont = new Font(rtbMain.SelectionFont, rtbMain.SelectionFont.Style != FontStyle.Underline ? FontStyle.Underline : FontStyle.Regular);
+            CheckFont();
         }
     }
 }
