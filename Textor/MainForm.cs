@@ -379,24 +379,12 @@ namespace Textor
             tsbtnBold.Checked = false;
             tsbtnItalic.Checked = false;
             tsbtnUnderlined.Checked = false;
-            switch (rtbMain.SelectionFont.Style)
-            {
-                case FontStyle.Bold:
-                    {
-                        tsbtnBold.Checked = true;
-                        break;
-                    }
-                case FontStyle.Italic:
-                    {
-                        tsbtnItalic.Checked = true;
-                        break;
-                    }
-                case FontStyle.Underline:
-                    {
-                        tsbtnUnderlined.Checked = true;
-                        break;
-                    }
-            }
+            if (rtbMain.SelectionFont.Bold)
+                tsbtnBold.Checked = true;
+            if (rtbMain.SelectionFont.Italic)
+                tsbtnItalic.Checked = true;
+            if (rtbMain.SelectionFont.Underline)
+                tsbtnUnderlined.Checked = true;
         }
 
         private void rtbMain_SelectionChanged(object sender, EventArgs e)
@@ -434,19 +422,19 @@ namespace Textor
 
         private void tsbtnBold_Click(object sender, EventArgs e)
         {
-            rtbMain.SelectionFont = new Font(rtbMain.SelectionFont, rtbMain.SelectionFont.Style != FontStyle.Bold ? FontStyle.Bold : FontStyle.Regular);
+            rtbMain.SelectionFont = new Font(rtbMain.SelectionFont, !rtbMain.SelectionFont.Bold ? FontStyle.Bold | rtbMain.SelectionFont.Style : rtbMain.SelectionFont.Style & ~FontStyle.Bold);
             CheckFont();
         }
 
         private void tsbtnItalic_Click(object sender, EventArgs e)
         {
-            rtbMain.SelectionFont = new Font(rtbMain.SelectionFont, rtbMain.SelectionFont.Style != FontStyle.Italic ? FontStyle.Italic : FontStyle.Regular);
+            rtbMain.SelectionFont = new Font(rtbMain.SelectionFont, !rtbMain.SelectionFont.Italic ? FontStyle.Italic | rtbMain.SelectionFont.Style : rtbMain.SelectionFont.Style & ~ FontStyle.Italic);
             CheckFont();
         }
 
         private void tsbtnUnderlined_Click(object sender, EventArgs e)
         {
-            rtbMain.SelectionFont = new Font(rtbMain.SelectionFont, rtbMain.SelectionFont.Style != FontStyle.Underline ? FontStyle.Underline : FontStyle.Regular);
+            rtbMain.SelectionFont = new Font(rtbMain.SelectionFont, !rtbMain.SelectionFont.Underline ? FontStyle.Underline | rtbMain.SelectionFont.Style : rtbMain.SelectionFont.Style & ~ FontStyle.Underline);
             CheckFont();
         }
     }
