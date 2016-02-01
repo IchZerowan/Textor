@@ -19,6 +19,8 @@ namespace Textor
         {
             InitializeComponent();
             this.args = args;
+            fontComboBox.Populate(true);
+            fontComboBox.SelectedItem = "Times New Roman";
         }
 
         private void Save()
@@ -224,7 +226,6 @@ namespace Textor
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
             openReg();
             try
             {
@@ -240,12 +241,6 @@ namespace Textor
             finally
             {
 
-            }
-            fontComboBox.Populate(true);
-            foreach (FontFamily ff in FontFamily.Families)
-            {
-                if (ff.IsStyleAvailable(FontStyle.Regular))
-                    fontComboBox.Items.Add(ff.Name);
             }
         }
 
@@ -376,6 +371,8 @@ namespace Textor
             }
 
             themeColorPickerToolStripSplitButton.Color = rtbMain.SelectionColor;
+            if (rtbMain.SelectionFont != null)
+                fontComboBox.Font = rtbMain.SelectionFont;
         }
 
         private void themeColorPickerToolStripSplitButton_ButtonClick(object sender, EventArgs e)
@@ -386,6 +383,11 @@ namespace Textor
         private void themeColorPickerToolStripSplitButton_ColorSelected(object sender, ColorSelectedArg e)
         {
             rtbMain.SelectionColor = e.Color;
+        }
+
+        private void fontComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            rtbMain.SelectionFont = new Font(fontComboBox.Text, rtbMain.SelectionFont.Size);
         }
     }
 }

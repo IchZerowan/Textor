@@ -88,9 +88,11 @@
             this.rtbMain.AcceptsTab = true;
             this.rtbMain.AutoWordSelection = true;
             this.rtbMain.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.rtbMain.HideSelection = false;
             this.rtbMain.Location = new System.Drawing.Point(0, 52);
             this.rtbMain.Name = "rtbMain";
             this.rtbMain.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.rtbMain.ShowSelectionMargin = true;
             this.rtbMain.Size = new System.Drawing.Size(618, 308);
             this.rtbMain.TabIndex = 0;
             this.rtbMain.Text = "";
@@ -487,11 +489,12 @@
             this.fontComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.fontComboBox.FormattingEnabled = true;
             this.fontComboBox.IntegralHeight = false;
-            this.fontComboBox.Location = new System.Drawing.Point(143, 27);
+            this.fontComboBox.Location = new System.Drawing.Point(141, 24);
             this.fontComboBox.MaxDropDownItems = 20;
             this.fontComboBox.Name = "fontComboBox";
-            this.fontComboBox.Size = new System.Drawing.Size(121, 21);
+            this.fontComboBox.Size = new System.Drawing.Size(147, 21);
             this.fontComboBox.TabIndex = 6;
+            this.fontComboBox.SelectedIndexChanged += new System.EventHandler(this.fontComboBox_SelectedIndexChanged);
             // 
             // MainForm
             // 
