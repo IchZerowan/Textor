@@ -96,11 +96,11 @@
             this.rtbMain.AutoWordSelection = true;
             this.rtbMain.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.rtbMain.HideSelection = false;
-            this.rtbMain.Location = new System.Drawing.Point(0, 67);
+            this.rtbMain.Location = new System.Drawing.Point(0, 52);
             this.rtbMain.Name = "rtbMain";
             this.rtbMain.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
             this.rtbMain.ShowSelectionMargin = true;
-            this.rtbMain.Size = new System.Drawing.Size(563, 308);
+            this.rtbMain.Size = new System.Drawing.Size(413, 374);
             this.rtbMain.TabIndex = 0;
             this.rtbMain.Text = "";
             this.rtbMain.SelectionChanged += new System.EventHandler(this.rtbMain_SelectionChanged);
@@ -117,7 +117,7 @@
             this.tsmiHelp});
             this.msMain.Location = new System.Drawing.Point(0, 0);
             this.msMain.Name = "msMain";
-            this.msMain.Size = new System.Drawing.Size(563, 24);
+            this.msMain.Size = new System.Drawing.Size(413, 24);
             this.msMain.TabIndex = 1;
             this.msMain.Text = "menuStrip1";
             // 
@@ -382,7 +382,7 @@
             // 
             this.Calendar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Calendar.ContextMenuStrip = this.cmsCalendar;
-            this.Calendar.Location = new System.Drawing.Point(347, 75);
+            this.Calendar.Location = new System.Drawing.Point(197, 75);
             this.Calendar.Name = "Calendar";
             this.Calendar.ShowWeekNumbers = true;
             this.Calendar.TabIndex = 2;
@@ -414,7 +414,7 @@
             // mtbTime
             // 
             this.mtbTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.mtbTime.Location = new System.Drawing.Point(499, 75);
+            this.mtbTime.Location = new System.Drawing.Point(349, 75);
             this.mtbTime.Mask = "90:00";
             this.mtbTime.Name = "mtbTime";
             this.mtbTime.Size = new System.Drawing.Size(34, 20);
@@ -438,7 +438,7 @@
             this.tsbtnUnderlined});
             this.tsMain.Location = new System.Drawing.Point(0, 24);
             this.tsMain.Name = "tsMain";
-            this.tsMain.Size = new System.Drawing.Size(563, 25);
+            this.tsMain.Size = new System.Drawing.Size(413, 25);
             this.tsMain.TabIndex = 5;
             this.tsMain.Text = "toolStrip1";
             // 
@@ -453,7 +453,7 @@
             this.fontComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.fontComboBox.FormattingEnabled = true;
             this.fontComboBox.IntegralHeight = false;
-            this.fontComboBox.Location = new System.Drawing.Point(209, 28);
+            this.fontComboBox.Location = new System.Drawing.Point(209, 24);
             this.fontComboBox.MaxDropDownItems = 20;
             this.fontComboBox.Name = "fontComboBox";
             this.fontComboBox.Size = new System.Drawing.Size(147, 21);
@@ -462,7 +462,7 @@
             // 
             // nudTextSize
             // 
-            this.nudTextSize.Location = new System.Drawing.Point(362, 28);
+            this.nudTextSize.Location = new System.Drawing.Point(362, 24);
             this.nudTextSize.Minimum = new decimal(new int[] {
             5,
             0,
@@ -573,7 +573,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(563, 375);
+            this.ClientSize = new System.Drawing.Size(413, 426);
             this.Controls.Add(this.nudTextSize);
             this.Controls.Add(this.fontComboBox);
             this.Controls.Add(this.tsMain);
@@ -583,6 +583,7 @@
             this.Controls.Add(this.msMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.msMain;
+            this.MinimumSize = new System.Drawing.Size(429, 464);
             this.Name = "MainForm";
             this.Text = "Textor";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);

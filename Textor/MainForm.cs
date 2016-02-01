@@ -318,7 +318,7 @@ namespace Textor
 
         private void MainForm_Resize(object sender, EventArgs e)
         {
-            rtbMain.Height = this.Height - 90;
+            rtbMain.Height = this.Height - 85;
         }
 
         private void stbtnAlign_left_Click(object sender, EventArgs e)
