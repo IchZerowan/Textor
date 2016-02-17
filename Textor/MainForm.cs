@@ -14,6 +14,7 @@ namespace Textor
         const string regKey = "Textor";
         const string path = "data.ini";
         string[] args;
+        bool ischangednud = false;
 
         public MainForm(string[] args)
         {
@@ -406,6 +407,8 @@ namespace Textor
             {
                 fontComboBox.Text = rtbMain.SelectionFont.Name;
                 nudTextSize.Value = (decimal)rtbMain.SelectionFont.Size;
+                if (rtbMain.SelectedText.Length != 0)
+                    ischangednud = true;
                 CheckFont();
             }
         }
@@ -427,7 +430,8 @@ namespace Textor
 
         private void nudTextSize_ValueChanged(object sender, EventArgs e)
         {
-            rtbMain.SelectionFont = new Font(rtbMain.SelectedText, (float)nudTextSize.Value);
+            if (!ischangednud)
+                rtbMain.SelectionFont = new Font(rtbMain.SelectedText, (float)nudTextSize.Value);
         }
 
         private void tsbtnBold_Click(object sender, EventArgs e)
