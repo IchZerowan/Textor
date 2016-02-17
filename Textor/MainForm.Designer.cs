@@ -72,18 +72,18 @@
             this.mtbTime = new System.Windows.Forms.MaskedTextBox();
             this.dlgFont = new System.Windows.Forms.FontDialog();
             this.tsMain = new System.Windows.Forms.ToolStrip();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.fontComboBox = new FontCombo.FontComboBox();
-            this.nudTextSize = new System.Windows.Forms.NumericUpDown();
             this.themeColorPickerToolStripSplitButton = new ExHtmlEditor.ColorPicker.ThemeColorPickerToolStripSplitButton();
+            this.tsSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.stbtnAlign_left = new System.Windows.Forms.ToolStripButton();
             this.stbtnAlign_center = new System.Windows.Forms.ToolStripButton();
             this.stbtnAlign_right = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.tsSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbtnBold = new System.Windows.Forms.ToolStripButton();
             this.tsbtnItalic = new System.Windows.Forms.ToolStripButton();
             this.tsbtnUnderlined = new System.Windows.Forms.ToolStripButton();
-            this.tsSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.fontComboBox = new FontCombo.FontComboBox();
+            this.nudTextSize = new System.Windows.Forms.NumericUpDown();
             this.msMain.SuspendLayout();
             this.cmsCalendar.SuspendLayout();
             this.tsMain.SuspendLayout();
@@ -371,7 +371,7 @@
             // dlgSave
             // 
             this.dlgSave.DefaultExt = "*.rtf";
-            this.dlgSave.Filter = "RichTextFiles|*.rtf";
+            this.dlgSave.Filter = "rich text files|*.rtf|txt-files|*.txt";
             this.dlgSave.FileOk += new System.ComponentModel.CancelEventHandler(this.dlgSave_FileOk);
             // 
             // dlgOpen
@@ -442,42 +442,6 @@
             this.tsMain.TabIndex = 5;
             this.tsMain.Text = "toolStrip1";
             // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(0, 22);
-            // 
-            // fontComboBox
-            // 
-            this.fontComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.fontComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.fontComboBox.FormattingEnabled = true;
-            this.fontComboBox.IntegralHeight = false;
-            this.fontComboBox.Location = new System.Drawing.Point(209, 24);
-            this.fontComboBox.MaxDropDownItems = 20;
-            this.fontComboBox.Name = "fontComboBox";
-            this.fontComboBox.Size = new System.Drawing.Size(147, 21);
-            this.fontComboBox.TabIndex = 6;
-            this.fontComboBox.SelectedIndexChanged += new System.EventHandler(this.fontComboBox_SelectedIndexChanged);
-            // 
-            // nudTextSize
-            // 
-            this.nudTextSize.Location = new System.Drawing.Point(362, 24);
-            this.nudTextSize.Minimum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.nudTextSize.Name = "nudTextSize";
-            this.nudTextSize.Size = new System.Drawing.Size(45, 20);
-            this.nudTextSize.TabIndex = 7;
-            this.nudTextSize.Value = new decimal(new int[] {
-            12,
-            0,
-            0,
-            0});
-            this.nudTextSize.ValueChanged += new System.EventHandler(this.nudTextSize_ValueChanged);
-            // 
             // themeColorPickerToolStripSplitButton
             // 
             this.themeColorPickerToolStripSplitButton.Color = System.Drawing.Color.Black;
@@ -493,6 +457,11 @@
             this.themeColorPickerToolStripSplitButton.Text = "Цвет текста";
             this.themeColorPickerToolStripSplitButton.ColorSelected += new ExHtmlEditor.ColorPicker.ThemeColorPickerToolStripSplitButton.colorSelected(this.themeColorPickerToolStripSplitButton_ColorSelected);
             this.themeColorPickerToolStripSplitButton.ButtonClick += new System.EventHandler(this.themeColorPickerToolStripSplitButton_ButtonClick);
+            // 
+            // tsSeparator1
+            // 
+            this.tsSeparator1.Name = "tsSeparator1";
+            this.tsSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // stbtnAlign_left
             // 
@@ -525,6 +494,16 @@
             this.stbtnAlign_right.Size = new System.Drawing.Size(23, 22);
             this.stbtnAlign_right.Text = "выравнять по правому краю";
             this.stbtnAlign_right.Click += new System.EventHandler(this.stbtnAlign_right_Click);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(0, 22);
+            // 
+            // tsSeparator2
+            // 
+            this.tsSeparator2.Name = "tsSeparator2";
+            this.tsSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // tsbtnBold
             // 
@@ -559,15 +538,36 @@
             this.tsbtnUnderlined.Text = "Подчеркнутый";
             this.tsbtnUnderlined.Click += new System.EventHandler(this.tsbtnUnderlined_Click);
             // 
-            // tsSeparator1
+            // fontComboBox
             // 
-            this.tsSeparator1.Name = "tsSeparator1";
-            this.tsSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.fontComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.fontComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.fontComboBox.FormattingEnabled = true;
+            this.fontComboBox.IntegralHeight = false;
+            this.fontComboBox.Location = new System.Drawing.Point(209, 24);
+            this.fontComboBox.MaxDropDownItems = 20;
+            this.fontComboBox.Name = "fontComboBox";
+            this.fontComboBox.Size = new System.Drawing.Size(147, 21);
+            this.fontComboBox.TabIndex = 6;
+            this.fontComboBox.SelectedIndexChanged += new System.EventHandler(this.fontComboBox_SelectedIndexChanged);
             // 
-            // tsSeparator2
+            // nudTextSize
             // 
-            this.tsSeparator2.Name = "tsSeparator2";
-            this.tsSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.nudTextSize.Location = new System.Drawing.Point(362, 24);
+            this.nudTextSize.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.nudTextSize.Name = "nudTextSize";
+            this.nudTextSize.Size = new System.Drawing.Size(45, 20);
+            this.nudTextSize.TabIndex = 7;
+            this.nudTextSize.Value = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            this.nudTextSize.ValueChanged += new System.EventHandler(this.nudTextSize_ValueChanged);
             // 
             // MainForm
             // 

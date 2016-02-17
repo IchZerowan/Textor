@@ -94,7 +94,10 @@ namespace Textor
 
         private void dlgSave_FileOk(object sender, CancelEventArgs e)
         {
-            rtbMain.SaveFile(dlgSave.FileName);
+            if (dlgSave.FilterIndex == 1)
+                rtbMain.SaveFile(dlgSave.FileName);
+            else
+                File.WriteAllLines(dlgSave.FileName, rtbMain.Lines);
             rtbMain.Modified = false;
         }
 
@@ -428,13 +431,13 @@ namespace Textor
 
         private void tsbtnItalic_Click(object sender, EventArgs e)
         {
-            rtbMain.SelectionFont = new Font(rtbMain.SelectionFont, !rtbMain.SelectionFont.Italic ? FontStyle.Italic | rtbMain.SelectionFont.Style : rtbMain.SelectionFont.Style & ~ FontStyle.Italic);
+            rtbMain.SelectionFont = new Font(rtbMain.SelectionFont, !rtbMain.SelectionFont.Italic ? FontStyle.Italic | rtbMain.SelectionFont.Style : rtbMain.SelectionFont.Style & ~FontStyle.Italic);
             CheckFont();
         }
 
         private void tsbtnUnderlined_Click(object sender, EventArgs e)
         {
-            rtbMain.SelectionFont = new Font(rtbMain.SelectionFont, !rtbMain.SelectionFont.Underline ? FontStyle.Underline | rtbMain.SelectionFont.Style : rtbMain.SelectionFont.Style & ~ FontStyle.Underline);
+            rtbMain.SelectionFont = new Font(rtbMain.SelectionFont, !rtbMain.SelectionFont.Underline ? FontStyle.Underline | rtbMain.SelectionFont.Style : rtbMain.SelectionFont.Style & ~FontStyle.Underline);
             CheckFont();
         }
     }
