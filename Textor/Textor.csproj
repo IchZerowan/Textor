@@ -32,6 +32,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationIcon>Book.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="FontCombo">
       <HintPath>C:\Users\Ih01\Desktop\Новая папка\FontCombo.dll</HintPath>
@@ -103,6 +107,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\formatunderline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Book.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
