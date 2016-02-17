@@ -376,6 +376,7 @@
             // 
             // dlgOpen
             // 
+            this.dlgOpen.Filter = "rich text files|*.rtf|txt-files|*.txt";
             this.dlgOpen.FileOk += new System.ComponentModel.CancelEventHandler(this.dlgOpen_FileOk);
             // 
             // Calendar

@@ -98,6 +98,7 @@ namespace Textor
                 rtbMain.SaveFile(dlgSave.FileName);
             else
                 File.WriteAllLines(dlgSave.FileName, rtbMain.Lines);
+            dlgOpen.FileName = dlgSave.FileName;
             rtbMain.Modified = false;
         }
 
@@ -113,7 +114,13 @@ namespace Textor
 
         private void dlgOpen_FileOk(object sender, CancelEventArgs e)
         {
-            rtbMain.LoadFile(dlgOpen.FileName);
+            if (dlgOpen.FilterIndex == 1)
+                rtbMain.LoadFile(dlgOpen.FileName);
+            else
+            {
+                rtbMain.Clear();
+                rtbMain.Text = File.ReadAllText(dlgOpen.FileName);
+            }
             dlgSave.FileName = dlgOpen.FileName;
             rtbMain.Modified = false;
         }
